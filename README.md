@@ -28,8 +28,10 @@ Siguiendo las buenas prácticas de la Ingeniería de Software, el proyecto se or
 FSM-WEB/
 ├── assets/             # Multimedia: Imágenes de la labor social y logos
 ├── css/                # Estilos: Diseño visual y responsivo
+├── js/                 # Archivos .js (Lógica global o scripts simples)
 ├── frontend/           # Vista: Lógica de la interfaz y componentes reutilizables
 │   └── partes/         # Fragmentos de UI (Navbar, Footer, Menús)
+│   └── scripts/        # Lógica de interactividad específica
 ├── backend/            # Servidor: Estructura base para lógica de negocio y DB
 │   ├── conexion/       # Futuros scripts de conexión a bases de datos
 │   └── controladores/  # Lógica de procesamiento de datos

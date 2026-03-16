@@ -1,0 +1,442 @@
+/* Reset Global: Quita formatos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental: el tamaño del elemento incluye padding y border */
+    text-decoration: none;  /* Quita el subrayado de los enlaces */
+    list-style: none;       /* Quita los puntos de las listas */
+}
+
+/* Configuración Base */
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al navegar por la página */
+
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+
+
+/* Inputs y Botones: Para que hereden la fuente del body */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*  Estructura Principal */
+.menu {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 40px; /*Espacio para que las líneas respiren */
+}
+
+.nav-wrapper {
+    max-width: 1100px; /* Encerrado para que no se vea gigante */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Los textos tocan la línea */
+    position: relative;
+    z-index: 10; /* Por encima de las líneas */
+}
+
+/* Grupos y Centrado de Iconos  */
+.nav-group {
+    display: flex;
+    flex: 1;
+    gap: 35px; /* Espaciado idéntico entre opciones */
+}
+
+.nav-group.left { 
+    justify-content: flex-end; 
+    padding-right: 30px; 
+    margin-bottom: 20px;
+
+}
+    
+.nav-group.right { 
+    justify-content: flex-start;
+     padding-left: 30px;
+     margin-bottom: 20px;
+     }
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado Horizontal del Icono */
+    text-decoration: none;
+    gap: 10px; /* Espacio entre icono y texto */
+}
+
+.custom-icon {
+    width: 55px;  /* Tamaño calibrado */
+    height: 55px;
+    object-fit: contain;
+}
+
+.nav-item span {
+    color: #1a237e; /* Azul oscuro */
+    font-weight: 800;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* Logo y Líneas */
+.logo-container {
+    flex: 0 0 auto;
+    z-index: 20; /* El logo va por ENCIMA de las líneas */
+}
+
+.main-logo {
+    height: 125px;
+    width: auto;
+    display: block;
+    margin-bottom: -25px; /* Hace que el logo pise las líneas */
+}
+
+.decorative-lines {
+    position: absolute;
+    bottom: 35px; /* Ajusta esto para que las líneas suban o bajen por el logo */
+    width: 100%;
+    z-index: 5; /* Por DEBAJO del logo y del texto */
+}
+
+
+
+.blue-bar { height: 4px; background-color: #1a237e; }
+.yellow-bar { height: 9px; background-color: #fbc02d; }
+
+/* Botón Donar */
+.btn-donar {
+    background-color: #fbc02d;
+    color: white;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end; /* Alineado a la base del texto */
+    margin-bottom: 2px;
+}
+
+/*FOOTER*/
+
+/* Contenedor principal del pie de página */
+.main-footer {
+    background-color: #0e3b1f; /* Verde oscuro profundo */
+    color: #ffffff;            /* Texto blanco para máximo contraste */
+    width: 100%;
+    padding-top: 40px;         /* Espacio interno superior */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Wrapper: Alinea el contenido al centro igual que el Header */
+.footer-wrapper {
+    max-width: 1200px;         /* Límite de ancho para pantallas grandes */
+    margin: 0 auto;            /* Centrado automático del bloque */
+    display: flex;             /* Distribución en columnas */
+    justify-content: space-between; /* Separa las columnas equitativamente */
+    align-items: flex-start;   /* Alinea el contenido al tope de cada columna */
+    padding: 0 20px 40px 20px; /* Padding lateral y espacio inferior */
+    flex-wrap: wrap;           /* Permite que las columnas bajen en dispositivos móviles */
+}
+
+/* Configuración general de cada columna del footer */
+.footer-column {
+    flex: 1;                   /* Cada columna crece proporcionalmente */
+    min-width: 200px;          /* Ancho mínimo antes de saltar de línea */
+    margin-bottom: 20px;
+}
+
+/* Títulos de las secciones del footer (Siguenos, Atención, etc.) */
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: capitalize; /* Asegura que solo la primera letra sea mayúscula */
+}
+
+/* Redes Sociales */
+
+.social-section {
+    display: flex;
+    flex-direction: column; /* Apila el título arriba y los iconos abajo */
+    align-items: center;    /* Centra el contenido(Título e iconos) */
+    text-align: center;
+}
+.social-section h3 {
+    margin-bottom: 20px;    /* Espacio entre el título y los círculos */
+    width: 100%;            /* Asegura que el título ocupe su espacio central */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centra los círculos horizontalmente entre sí */
+    gap: 15px;               /* Espacio entre cada círculo verde */      
+}
+.social-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #189C39; /* Circulo Verde de Redes Socicales*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icons img {
+    width: 38px;               /* Tamaño de los iconos de redes sociales */
+    height: 38px;
+    border-radius: 50%;        /* Mantiene la forma circular de los iconos */
+    transition: transform 0.3s ease; /* Efecto suave de hover */
+}
+
+.social-icons img:hover {
+    transform: translateY(-5px); /* El icono sube ligeramente al pasar el mouse */
+}
+
+/* Contactanos*/
+.text-center{
+    align-items: center;    /* Centra el contenido(Título e iconos) */
+    text-align: center;
+    justify-content: center; /* Centra el contenido interno (icono + texto) */
+   
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el bloque de la lista */
+    text-align: center;
+}
+
+.contact-info ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra cada li individualmente */
+    padding: 0;
+}
+
+.contact-info li { 
+     width: 100%;
+}
+
+/* Iconos pequeños de teléfono, ubicación y correo */
+.mini-icon {
+    width: 22px;               
+    height: auto;
+    filter: brightness(0) invert(1); /* Convierte iconos oscuros a blanco puro */
+}
+
+/* logo y derechos */
+
+/* Logo de la Fundación en versión negativa (blanca) */
+.footer-logo img {
+    height: 15rem;
+    width: auto;
+    display: block;
+    margin-left: auto;         /* Empuja el logo hacia el extremo derecho */
+}
+
+/* Barra final de Copyright (Franja Negra) */
+.copyright-bar {
+    background-color: #000000; /* Fondo negro absoluto */
+    color: #cccccc;            /* Gris claro para no cansar la vista */
+    text-align: center;        /* Centra el texto del copyright */
+    padding: 15px 0;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Línea divisoria sutil */
+}
+
+.copyright-bar p {
+    margin: 2px 0; /* Espacio mínimo entre las dos líneas de texto */
+}
+
+/* Estilos del Botn Hambuerguesa- LÍNEAS */
+.menu-toggle {
+    display: none; /* Oculto en computadoras */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000; /* Siempre visible sobre otros elementos */
+}
+
+/* Damos forma y color a los span vacíos del HTML */
+.menu-toggle span {
+    display: block; /* Importante para que ocupen espacio */
+    width: 100%;
+    height: 3px;
+    background-color: #1a237e;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adaptacion menu pantalla  pequeña menor a 768px*/
+@media (max-width: 768px) {
+    /* El contenedor padre se oculta */
+    .nav-wrapper {
+        display: none !important;
+    }
+
+    /* El boton: Lo hacemos "fixed" para que no dependa del padre oculto */
+    .menu-toggle {
+        display: flex !important; 
+        position: fixed !important; /* CLAVE: Esto lo saca del flujo del wrapper */
+        right: 20px !important;
+        top: 20px !important;
+        z-index: 11000 !important; /* Por encima de TODO */
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 30px !important;
+        height: 22px !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    /* LAS RAYITAS:  altura y color */
+    .menu-toggle span {
+        display: block !important;
+        width: 100% !important;
+        height: 4px !important;
+        background-color: #1a237e !important; 
+        border-radius: 4px !important;
+    }
+
+   /* EL PANEL BLANCO: Ajustamos el alineamiento */
+    .nav-wrapper.mobile-active {
+        display: flex !important;
+        flex-direction: column !important; /* Fuerza la columna */
+        position: fixed !important;
+        top: 0;
+        right: 0;
+        width: 280px !important;
+        height: 100vh !important;
+        background-color: white !important;
+        z-index: 10000 !important;
+        padding: 80px 20px 20px 20px !important; /* Espacio para el botón y bordes */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2) !important;
+        overflow-y: auto !important; /* Por si hay muchos links, permite bajar */
+        align-items: flex-start !important; /* Alinea todo a la izquierda */
+    }
+
+    /* LOS GRUPOS (Izquierda y Derecha): Ahora deben ser columnas */
+    .nav-group.left, 
+    .nav-group.right {
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Alinea items a la izquierda */
+        width: 100% !important;
+        gap: 25px !important; /* Espacio entre cada opción */
+        margin-bottom: 25px !important;
+        padding: 0 !important;
+        justify-content: flex-start !important;
+    }
+
+    /* CADA ITEM DEL MENÚ: Icono al lado del texto o encima */
+    .nav-item {
+        flex-direction: row !important; /* Icono a la izquierda, texto a la derecha */
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .nav-item span {
+        font-size: 16px !important;
+        color: #1a237e !important;
+        white-space: normal !important; /* Permite que el texto baje si es largo */
+    }
+
+    .custom-icon {
+        width: 35px !important; /* Iconos un poco más pequeños para móvil */
+        height: 35px !important;
+    }
+
+    /* EL LOGO DENTRO DEL MENÚ: Lo centramos o ajustamos */
+    .logo-container {
+        order: -1; /* Mueve el logo al principio del menú si quieres */
+        margin-bottom: 30px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .main-logo {
+        height: 80px !important;
+        margin: 0 auto !important;
+    }
+
+    /* EL BOTÓN DE DONAR EN MÓVIL */
+    .btn-donar {
+        align-self: center !important; /* Centrado para que destaque */
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+}
+/* Adaptacion para moviles con tamaño de pantalla Menor de 576px 
+   Enfoque: Todo en una sola columna y elementos compactos. */
+@media (max-width: 575.98px) {
+    .main-logo { height: 80px; margin-bottom: -10px; }
+    .menu { padding-bottom: 20px; }
+    
+    /* Cuerpo General */
+    .container, section { padding: 20px 15px; }
+    h1 { font-size: 24px; }
+    
+    /* Footer */
+    .footer-wrapper { flex-direction: column; align-items: center; text-align: center; }
+    .footer-column { width: 100%; margin-bottom: 30px; }
+    .footer-logo img { margin: 0 auto; height: 12rem; }
+}
+
+/*  MÓVILES GRANDES / TABLETS PEQUEÑAS (576px a 767.98px)
+   Enfoque: Empezar a dar aire a los elementos.*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .main-logo { height: 95px; }
+    .nav-wrapper.mobile-active { width: 320px; }
+    
+    .footer-column { flex: 0 0 50%; } /* Dos columnas en el footer */
+}
+
+/* Adapatcion enfoque a TABLETS Y LAPTOPS (768px a 991.98px)
+   Enfoque: Aquí desaparece el botón hamburguesa y vuelve el menú horizontal. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .menu-toggle { display: none !important; }
+    .nav-wrapper { display: flex !important; max-width: 95%; }
+    
+    /* Ajuste de los items del menú para que no se amontonen */
+    .nav-group { gap: 15px; }
+    .nav-item span { font-size: 13px; }
+    .custom-icon { width: 40px; height: 40px; }
+    .btn-donar { padding: 6px 15px; font-size: 14px; }
+
+    .footer-wrapper { justify-content: space-around; }
+}
+
+/*  ESCRITORIOS ESTÁNDAR (992px a 1199.98px)
+   Enfoque: El diseño se expande a su forma casi final.*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-wrapper { max-width: 960px; }
+    .nav-group { gap: 20px; }
+    .main-logo { height: 115px; }
+    .footer-column { flex: 1; } /* Columnas repartidas equitativamente */
+}
+
+/* Adaptacion a  pantallas grandes (Más de 1200px)
+   Enfoque: Máxima elegancia y espaciado.*/
+@media (min-width: 1200px) {
+    .nav-wrapper { max-width: 1100px; }
+    .footer-wrapper { max-width: 1200px; }
+    
+    /* El cuerpo de la página se mantiene centrado y elegante */
+    .main-content { max-width: 1100px; margin: 0 auto; }
+}
