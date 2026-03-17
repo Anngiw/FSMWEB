@@ -1,21 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación El Señor de Los Milagros</title>
-    <link rel="stylesheet" href="css/styles.css"> 
+    <title class="title-red">Fundación El Señor de Los Milagros</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- llamo a mis hojas de estilo la global, que es Style, donde se da estilo a el Foother y header, admas de reset y reglas globales-->
+    <link rel="stylesheet" href="css/home.css">
+    <!-- llamo a la hoja de estilo que le da el diseño al cuerpo del inicio-->
 </head>
+
 <body>
-<header class ="cabecera" id="main-header"></header>
+    <header class="cabecera" id="main-header"></header>
 
-<main>
-    <h1>Contenido de la página</h1>
+    <main class="main-page-container">
+
+        <section class="section-hero">
+            <div class="hero-content">
+                <div class="hero-text-block">
+                    <h2 class="quote-fsm">Cuidando a <br>quienes más <br>nos necesitan.</h2>
+                    <div class="hero-actions">
+                        <a href="voluntario.html" class="btn-yellow">SERVICIO</a>
+                        <a href="involucrate.html" class="btn-yellow">APÓYANOS</a>
+                    </div>
+                </div>
+                <div class="hero-image-block">
+                    <img src="assets\img\fotos\hero.webp" alt="Personal de salud" class="nurse-img" loading="lazy">
+                </div>
+            </div>
+            <div class="full-yellow-divider"></div>
+        </section>
+
+        <section class="section-conocenos">
+
+            <div class="full-width-title-bar">
+                <h2 class="section-subtitle">CONÓCENOS</h2>
+            </div>
+
+            <div class="conocenos-container">
+                <div class="cards-grid">
+                    <div class="card-item">
+
+                        <div class="card-icon">
+                            <img src="assets\img\coloriconos\MISIÓN.webp" alt="Misión" loading="lazy">
+                        </div>
+
+                        <h3 class="card-title">MISIÓN</h3>
+                        <p class="card-text">Brindamos una vejez digna y plena a adultos mayores en vulnerabilidad,
+                            transformando sus
+                            vidas a través del amor al projimo y la atencion Integral</p>
+                    </div>
+                    <div class="card-item">
+
+                        <div class="card-icon">
+                            <img src="assets\img\coloriconos\VISIÓN.webp" alt="Misión" loading="lazy">
+                        </div>
+
+                        <h3 class="card-title">VISIÓN</h3>
+                        <p class="card-text">Ser un Hogar Modelo y autosostenible que transforme la realidad de la
+                            tercera edad en Colombia
+                            Inspirando a la Sociedad a través del Amor y la Excelencia en el cuidado del adulto Mayor.
+                        </p>
+                    </div>
+                    <div class="card-item">
+
+                        <div class="card-icon">
+                            <img src="assets\img\coloriconos\VALORES.webp" alt="Misión" loading="lazy">
+                        </div>
+
+                        <h3 class="card-title">VALORES</h3>
+                        <p class="card-text">Nuestra Labor se fundamenta en el Amor al Projimo, la Dignidad Humana y el
+                            compromiso
+                            Social para garantizar un cuidado Integral, cálido y transparente.
+                        </p>
+                    </div>
+                    <div class="card-item">
+
+                        <div class="card-icon">
+                            <img src="assets\img\coloriconos\PROYECTOS.webp" alt="Misión" loading="lazy">
+                        </div>
+
+                        <h3 class="card-title">PROYECTOS</h3>
+                        <p class="card-text">Desarrollamos Programas Integrales de Vivienda, Salud y Nutrición
+                            para arantizar El Bienestar y La Dignidad de los Adultos Mayores en Situacion de
+                            Vulnerabilidad
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conocenos-actions">
+                    <a href="nosotros.html" class="btn-ver-general">VER</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-historia">
+            <div class="historia-wrapper">
+
+                <div class="historia-logo">
+                    <img src="assets\img\logo.webp" alt="Logo Fundación" loading="lazy">
+                </div>
+
+                <div class="historia-main-content">
+                    <h2 class="historia-title">NUESTRA HISTORIA</h2>
+                    <div class="historia-text">
+                        <p>Nacida en Bogotá el 26 de marzo de 1998, la Fundación El Señor de los Milagros ha dedicado
+                            más de 25 años a transformar la vida de adultos mayores en situación de vulnerabilidad y
+                            abandono, ofreciéndoles en su hogar de tres plantas una atención integral basada en el amor
+                            al prójimo que garantiza vivienda, salud, alimentación y una vejez digna y respetable.</p>
+                    </div>
+                </div>
+
+                <div class="historia-action">
+                    <a href="nosotros.html" class="btn-ver-historia">VER</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
 
-<footer id="main-footer"></footer> 
+    <footer id="main-footer"></footer>
 
-<script src="js/main.js" type="module"></script>
+    <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />
+    </a>
+
+    <script src="js/main.js" type="module"></script>
 
 </body>
+
 </html>
