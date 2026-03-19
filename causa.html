@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title-red">Fundación El Señor de Los Milagros</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- llamo a mis hojas de estilo la global, que es Style, donde se da estilo a el Foother y header, admas de reset y reglas globales-->
+    <link rel="stylesheet" href="css/causa.css">
+    <!-- llamo a la hoja de estilo que le da el diseño al cuerpo causa-->
+</head>
+
+<body>
+    <header class="cabecera" id="main-header"></header>
+    <section class="seccion-actividades">
+    <h2 class="titulo-central">Actividades</h2>
+        <div class="grid-iconos">
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\Arte Terapia .webp" alt="Arte Terapia">
+                <span>Arte Terapia</span>
+            </div>
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\espiritualidad.webp" alt="Espiritualidad">
+                <span>Espiritualidad</span>
+            </div>
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\BINGO .webp" alt="Bingo">
+                <span>Bingo</span>
+            </div>
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\Cine Foro (1).webp" alt="Cine Foro">
+                <span>Cine Foro</span>
+            </div>
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\Asistencia a Eventos.webp" alt="Asistencia">
+                <span>Asistencia</span>
+            </div>
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\cuidado nutricional.webp" alt="Nutrición">
+                <span>Cuidado Nutricional</span>
+            </div>
+            <div class="item-icono">
+                <img src="assets\img\coloriconos\autocuidado.webp" alt="Capacitación">
+                <span>Capacitación</span>
+            </div>
+        </div>
+        <br><br>
+        <p class="descripcion-actividades">
+            Nuestro programa brinda atención integral a adultos mayores vulnerables, combinando espiritualidad,
+            recreación y expresión artística. A través de actividades como la oración, el bingo, talleres de dibujo y
+            capacitaciones en autocuidado, promovemos su autonomía y bienestar social, garantizando una vida digna
+            basada en el amor y la protección.
+        </p>
+    </section>
+
+    <section class="seccion-galeria">
+        <div class="franja-amarilla">Dignificando la vida de quienes nos dieron todo</div>
+        <br><br>
+        <div class="contenedor-slider">
+            <div class="slides-wrapper" id="cloudinary-slider">
+                <p class="cargando">Cargando momentos de esperanza...</p>
+            </div>
+            <button class="nav-btn prev" onclick="cambiarSlide(-1)">&#10094;</button>
+            <button class="nav-btn next" onclick="cambiarSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <div class="seccion-btn-desplazamiento">
+        <a href="dona.html" class="btn-ir-apoyo">APOYA SU PAZ Y FELICIDAD</a>
+    </div>
+
+    <section id="testimonios" class="seccion-testimonios">
+        <div class="franja-azul">Una Semilla que das es un Milagro para ellos</div>
+        <div class="grid-testimonios">
+
+            <div class="card-abuelito">
+                <img src="assets\img\logo-fundacion.webp" alt="Don Ricardo" class="foto-grande">
+                <h3 class="nombre">Don Ricardo (75 años):</h3>
+                <p>"A mi edad, los días se hacían largos y el hambre pesaba... Aquí encontré el apoyo que ya no tenía en
+                    casa."</p>
+            </div>
+
+            <div class="card-abuelito">
+                <img src="assets\img\logo-fundacion.webp" alt="Don Samuel" class="foto-grande">
+                <h3 class="nombre">Don Samuel (78 años):</h3>
+                <p>"Pasé meses sintiendo que el mundo se había olvidado de mí... Me devolvieron la dignidad de sentirme
+                    valioso."</p>
+            </div>
+
+            <div class="card-abuelito">
+                <img src="assets\img\logo-fundacion.webp" alt="Doña Teresa" class="foto-grande">
+                <h3 class="nombre">Doña Teresa (82 años):</h3>
+                <p>"Vivir en la calle o con carencias me hacía sentir que mis días estaban contados... La fe se
+                    convierte en acciones que nos salvan."</p>
+            </div>
+            
+
+        </div>
+        
+        
+    </section>
+
+
+
+
+    <footer id="main-footer"></footer>
+
+    <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />
+    </a>
+
+    <script src="js/main.js" type="module"></script>
+    <script src="js/causa.js"></script>
+
+</body>
+
+</html>

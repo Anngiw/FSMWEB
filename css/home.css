@@ -1,10 +1,4 @@
-/* reset y reglas globales */
-/* quita margenes y rellenos que vienen por defecto en el navegador */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* evita que la pagina se mueva hacia los lados en pantallas pequeñas */
 body, html {

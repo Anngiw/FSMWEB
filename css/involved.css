@@ -1,0 +1,298 @@
+/* reglas generales del contenedor principal  */
+.main-page-container {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: sans-serif;
+}
+
+/*bloque 1: historia y video cuadrado */
+.encabezado-azul {
+    background-color: #090540;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.encabezado-azul h1 {
+    color: #f5c114;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.fila-historia {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+
+.caja-texto {
+    flex: 1;
+    min-width: 320px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja-texto p {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    text-align: center;
+}
+
+.caja-video {
+    flex: 1;
+    min-width: 320px;
+    background-color: #090540;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.circulo-video {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 16 / 9;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 6px solid #f5c114;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.circulo-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.etiqueta-video {
+    color: #f5c114;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* bloque 2: seccion de donaciones  */
+.franja-amarilla-info {
+    background-color: #090540;
+    border-top: 6px solid #f5c114;
+    border-bottom: 6px solid #f5c114;
+    padding: 30px 10px;
+    text-align: center;
+    color: white;
+}
+
+.contenedor-principal-donaciones {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 5%;
+    gap: 30px;
+    align-items: center;
+}
+
+.foto-donacion-izquierda {
+    flex: 1;
+    min-width: 300px;
+}
+
+.foto-donacion-izquierda img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: -80px;
+}
+
+.grid-cards-donacion {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 15rem;
+    margin-bottom: 15px;
+}
+.economica{
+    height: 13.5rem;
+    width: auto;
+}
+
+.card h3 {
+    color: #f5c114;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* bloque 3: metodos de pago  */
+.seccion-pagos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.metodo-pago {
+    flex: 1;
+    min-width: 300px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    /* apila elementos uno sobre otro */
+    align-items: center;
+    /* centra todo horizontalmente de forma obligatoria */
+    justify-content: center;
+    text-align: center;
+}
+
+.nequi {
+    background-color: #090540;
+    color: white;
+    border-right: 4px solid #f5c114;
+}
+
+.bbva {
+    background-color: #f5c114;
+    color: #090540;
+}
+
+.logos-bancos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.logos-bancos img {
+    height: 45px;
+}
+
+.numero-pago {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 12px 0;
+    width: 100%;
+    color: #ffffff;
+}
+
+/* estilo del boton centrado */
+.btn-donar {
+    display: block;
+    /* lo tratamos como bloque */
+    width: fit-content;
+    /* para que solo ocupe el espacio de su texto */
+    padding: 10px 45px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    margin: 10px auto 0 auto;
+    /* el margin auto lo fuerza al centro */
+}
+
+.nequi .btn-donar {
+    background-color: #f5c114;
+    color: #090540;
+}
+
+.bbva .btn-donar {
+    background-color: #090540;
+    color: white;
+}
+
+.btn-donar:hover {
+    transform: scale(1.05);
+}
+
+
+/* consultas de medios para adaptabilidad  */
+
+/* bloque de adaptabilidad sin espacios incesarios */
+@media (max_width:1024px) {
+
+    .caja_texto,
+    .caja_video {
+        padding: 30px;
+    }
+
+    .grid_cards_donacion {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .encabezado_azul h1 {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max_width:768px) {
+
+    /* cambio a columna para dispositivos moviles */
+    .fila_historia,
+    .contenedor_principal_donaciones,
+    .seccion_pagos {
+        flex-direction: column;
+    }
+
+    .caja_texto,
+    .caja_video {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .grid_cards_donacion {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .foto_donacion_izquierda {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* ajuste de bordes en metodos de pago */
+    .nequi {
+        border-right: none;
+        border-bottom: 4px solid #f5c114;
+    }
+
+    .circulo_video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max_width:480px) {
+    .encabezado_azul h1 {
+        font-size: 1.5rem;
+    }
+
+    .numero_pago {
+        font-size: 1.2rem;
+    }
+
+    .btn_donar {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .caja_texto p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}

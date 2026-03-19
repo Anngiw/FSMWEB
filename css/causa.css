@@ -1,0 +1,265 @@
+/* Estilo General  */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Banner */
+.franja-amarilla {
+    background: #f5c114; /* Mostaza/Dorado */
+    color: #090540; /* Azul oscuro */
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.franja-azul {
+    background: #090540; /* Azul oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+/* Seccion 1 y 2 de actividades */
+.seccion-actividades {
+    padding: 40px 20px;
+    
+}
+.descripcion-actividades{
+    text-align: center;
+}
+
+.titulo-central {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    background-color: #090540;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*Iconos de actividades flotantes */
+.grid-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Más espacio entre iconos grandes */
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.item-icono {
+    text-align: center;
+    width: 140px; /* Aumentamos el ancho del contenedor del icono */
+    
+    /* Animacion flotante */
+    animation: flotarIcono 4s ease-in-out infinite;
+}
+
+/*  Cada icono empieza en un tiempo diferente para efecto flotante*/
+.item-icono:nth-child(1) { animation-delay: 0s; }
+.item-icono:nth-child(2) { animation-delay: 0.8s; }
+.item-icono:nth-child(3) { animation-delay: 1.6s; }
+.item-icono:nth-child(4) { animation-delay: 0.4s; }
+.item-icono:nth-child(5) { animation-delay: 1.2s; }
+.item-icono:nth-child(6) { animation-delay: 2s; }
+.item-icono:nth-child(7) { animation-delay: 2.8s; }
+
+.item-icono img {
+    width: 110px;  /* Iconos más grandes  */
+    height: 110px; 
+    border-radius: 50%;
+    border: 4px solid #f5c114; /* Borde un poco más grueso para que resalte */
+    object-fit: cover;
+    margin-bottom: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /*Sombra para dar profundidad al flota */
+    transition: all 0.3s ease;
+}
+
+/* Efecto */
+.item-icono:hover img {
+    transform: scale(1.1); /* Crece un poco al poner el mouse */
+    border-color: #090540; /* Cambia a azul institucional */
+    box-shadow: 0 12px 25px rgba(9, 5, 64, 0.2);
+}
+
+.item-icono span {
+    display: block;
+    font-size: 0.85rem; /* Texto un poco más legible */
+    color: #090540;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Movimiento */
+@keyframes flotarIcono {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px); /* Sube 12px sutilmente */
+    }
+}
+
+/* seccion 3 y 4 galeria justada) - */
+.seccion-galeria {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 40px;
+    background-color: #090540;
+}
+
+/* contenedor principal del slider */
+.contenedor-slider {
+    position: relative;
+    max-width: 950px; /* Ancho máximo para pantallas grandes */
+    margin: 30px auto;   /* Centra el slider verticalmente */
+    height: 500px;    /* Altura fija para que todas las fotos se vean iguales */
+    background-color: #ffffff; /* Fondo */
+    border-radius: 20px; /* Bordes redondeados modernos */
+    overflow: hidden; /* Oculta lo que esté fuera del cuadro */
+    
+ 
+    /* Box-shadow: desplazamientoX desplazamientoY desfoque extension color con opacidad */
+    box-shadow: 0 15px 35px rgba(246, 246, 246, 0.724); /* Sombra suave y azulada para dar profundidad */
+    
+    border: 4px solid #a3a3a5b6; /* Marco gris tipo cuadro para que resalte el azul */
+    box-sizing: border-box; /* Incluye borde y padding en el ancho total */
+}
+
+/* Envoltura de las diapositivas */
+.slides-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Imagenes dentro del slider */
+.slides-wrapper img {
+    width: 100%;      
+    height: 100%;     
+    flex-shrink: 0;   
+    object-fit: contain; /* Foto completa sobre el fondo azul */
+    padding: 10px;
+}
+
+/* Botones de navegacion */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.15); /* Efecto Glassmorphism */
+    backdrop-filter: blur(5px);
+    color: #0381e8; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background-color: #f5c114;
+    color: #090540;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Mensaje de carga */
+.cargando {
+    width: 100%;
+    text-align: center;
+    margin-top: 230px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Seccion 5 desplazamiento */
+.seccion-btn-desplazamiento {
+    text-align: center;
+    padding: 30px;
+}
+
+.btn-ir-apoyo {
+    display: inline-block;
+    background: #f5c114;
+    color: #090540;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-ir-apoyo:hover {
+    background: #090540;
+    color: #f5c114;
+}
+
+/*Seccion 6 Crads de testimonios */
+.seccion-testimonios {
+    padding-bottom: 50px;
+}
+
+.grid-testimonios {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.card-abuelito {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card-abuelito:hover {
+    transform: translateY(-10px);
+}
+
+.foto-grande {
+    width: 100%;
+    height: 400px; /* Imagen vertical grande */
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.nombre {
+    color: #f5c114; /* Color mostaza */
+    font-size: 1.2rem;
+    margin: 15px 0 10px 0;
+    font-weight: bold;
+}
+
+.card-abuelito p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+    text-align: justify;
+}

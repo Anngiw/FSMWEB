@@ -1,0 +1,179 @@
+/* hero seccion donaciones */
+.hero-donar {
+    background: linear-gradient(135deg, #090540 0%, #1a1464 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+/* contenedor metodos de pago */
+.metodos-pago-container {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+/* rejilla principal de tarjetas */
+.grid-donar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* tarjetas de pago individuales */
+.card-pago {
+    background: white;
+    border-radius: 25px;
+    padding: 40px 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(9, 5, 64, 0.05);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+/* efecto elevacion al pasar el mouse */
+.card-pago:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(9, 5, 64, 0.12);
+    border-color: #f5c114;
+}
+
+/* barra superior decorativa */
+.top-bar {
+    height: 6px;
+    width: 60px;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+}
+
+/* colores por entidad bancaria */
+.nequi {
+    background: #000000;
+}
+
+.daviplata {
+    background: #ED1C24;
+}
+
+.bbva {
+    background: #040081;
+}
+
+/* logos de bancos */
+.logo-banco {
+    height: 45px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+/* recuadro para codigo qr */
+.qr-box {
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px dashed #ddd;
+    margin-bottom: 20px;
+}
+
+.qr-box img {
+    width: 100%;
+    max-width: 150px;
+}
+
+/* bloque con informacion de cuenta */
+.datos-cuenta {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* etiquetas de texto secundario */
+.etiqueta {
+    font-size: 0.75rem;
+    color: #888;
+    display: block;
+}
+
+/* valores de texto resaltado */
+.valor {
+    font-size: 0.95rem;
+    color: #090540;
+    font-weight: 700;
+}
+
+/* boton de agradecimiento */
+.btn-agradecer {
+    background: #090540;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+.btn-agradecer:hover {
+    background: #f5c114;
+    color: #090540;
+}
+
+/* estructura del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 5, 64, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+/* contenido interno del modal */
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 40px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* icono animado de corazon */
+.heart-icon {
+    font-size: 50px;
+    color: #ed1c24;
+    margin-bottom: 20px;
+    animation: beat 1s infinite;
+}
+
+/* animacion de latido */
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* boton para cerrar modal */
+.btn-cerrar-modal {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: none;
+    cursor: pointer;
+}

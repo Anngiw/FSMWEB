@@ -1,0 +1,207 @@
+/* --- Estilos Globales de Sección --- */
+section {
+    width: 100%;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+}
+.cita-resaltada{
+ color:#090540;
+ 
+}
+h2{
+font-weight: bold;
+ 
+}
+
+
+/* --- Franjas Full Width --- */
+.franja-azul-oscuro {
+    background-color: #090540;
+    color: #f5c114;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.franja-amarilla {
+    background-color: #f5c114;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+.franja-verde-menta {
+    background-color: #d1ece7;
+    text-align: center;
+    padding: 20px 0;
+    color: #090540;
+}
+
+.seccion-gris {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.seccion-blanca {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* --- Alineación Foto al Lado del Texto (Flexbox) --- */
+.fila-flex {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente la foto con el texto */
+    gap: 50px;
+    /* Espacio entre foto y texto */
+    flex-wrap: wrap;
+}
+
+.columna-foto {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.columna-texto {
+    flex: 2;
+    min-width: 300px;
+    align-items: center;
+}
+
+/* Marcos de fotos */
+.marco-foto-azul img {
+   
+    /* Borde azul de la directora */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+     box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para dar profundidad */ 
+}
+
+.foto-simple {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+/* Efecto para la foto de Lucila y la de Voluntarios */
+.marco-foto-azul img, .foto-simple {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.marco-foto-azul img:hover, .foto-simple:hover {
+    transform: scale(1.03); /* Se agranda un poquito */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
+}
+.btn-amarillo {
+    transition: all 0.3s ease;
+}
+
+.btn-amarillo:hover {
+    background-color: #090540 !important; /* Cambia a azul oscuro */
+    color: #f5c114 !important;           /* Letras amarillas */
+    transform: translateY(-3px);          /* Sube un poco */
+    box-shadow: 0 5px 15px rgba(245, 193, 20, 0.3);
+}
+
+/* Botones Centrados  */
+.grupo-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: space-around;
+}
+
+.btn-amarillo {
+    background-color: #f5c114;
+    color: #090540;
+    padding: 10px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+/* Grid de Equipo  */
+.grid-equipo {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    text-align: center;
+    background-color: #fff; /* Fondo blanco para que la sombra resalte */
+    padding: 20px;
+    border-radius: 8px; /* Bordes suaves */
+    
+    /* 1. Sombra inicialL: Una sombra muy sutil */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    
+    /* 2. Transicion: Importante para que el efecto hover sea suave, no brusco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    
+    display: flex; /* Para que los elementos internos se alineen bien */
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Efecto hover: Lo que cambia al pasar el mouse */
+
+.card:hover {
+    /* Efecto Flotante: Se eleva un poquito (5px) */
+    transform: translateY(-5px); 
+    
+    /* La sombra se hace más profunda y suave */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+}
+
+/* Mantenemos el resto de tus estilos de card igual */
+.card-ancho {
+    text-align: center;
+}
+
+.card img {
+    max-width: 20rem; /* Ajuste para los iconos */
+    margin-bottom: 15px;
+}
+
+.dos-columnas-internas {
+    display: flex;
+    gap: 20px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.nombre-yellow {
+    color: #f5c114;
+    font-weight: bold;
+    display: block;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .fila-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grupo-botones {
+        justify-content: center;
+    }
+
+    .grid-equipo {
+        grid-template-columns: 1fr;
+    }
+}

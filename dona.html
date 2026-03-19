@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title-red">Fundación El Señor de Los Milagros</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- llamo a mis hojas de estilo la global, que es Style, donde se da estilo a el Foother y header, admas de reset y reglas globales-->
+    <link rel="stylesheet" href="css/dona.css">
+    <!-- llamo a la hoja de estilo que le da el diseño al cuerpo de donar-->
+
+
+</head>
+
+<body>
+    <header class="cabecera" id="main-header"></header>
+
+
+    <main class="donaciones-page">
+        <section class="hero-donar">
+            <div class="wrap">
+                <h1>Tu Generosidad Es Esperanza</h1>
+                <p>Cada aporte nos permite seguir brindando amor y cuidado a nuestros adultos mayores, transformando su
+                    realidad en una vejez digna, activa y llena de esperanza. Gracias a tu generosidad, aseguramos que
+                    ningún abuelito se sienta solo o desprotegido.</p>
+            </div>
+        </section>
+
+        <section class="metodos-pago-container">
+            <div class="wrap grid-donar">
+
+                <div class="card-pago">
+                    <div class="top-bar nequi"></div>
+                    <img src="assets\img\redes\N.svg" alt="Nequi" class="logo-banco" style="background-color: rgb(250, 249, 249); border-radius: 10px;">
+                    <div class="qr-box">
+                        <img src=" " alt="QR Nequi">
+                    </div>
+                    <h3>Dona con Nequi</h3>
+                    <p>Escanea desde tu App Nequi</p>
+                    <button class="btn-agradecer">Ya realicé mi aporte</button>
+                </div>
+
+                <div class="card-pago">
+                    <div class="top-bar daviplata"></div>
+                    <img src="assets\img\redes\Dp.svg" alt="Daviplata" class="logo-banco" style="background-color: red; border-radius: 10px;">
+                    <div class="qr-box">
+                        <img src=" " alt="QR Daviplata">
+                    </div>
+                    <h3>Dona con DaviPlata</h3>
+                    <p>Envía tu aporte desde tu celular</p>
+                    <button class="btn-agradecer">Ya realicé mi aporte</button>
+                </div>
+
+                <div class="card-pago">
+                    <div class="top-bar bbva"></div>
+                    <img src="assets\img\redes\Logo-BBVA-30-anios.svg" alt="BBVA" class="logo-banco" style="background-color: rgb(255, 250, 250); border-radius: 10px;">
+                    <div class="info-transferencia">
+                        <div class="datos-cuenta">
+                            <span class="etiqueta">Banco:</span>
+                            <span class="valor">BBVA</span>
+                            <hr>
+                            <span class="etiqueta">Cuenta de Ahorros:</span>
+                            <span class="valor">#18087065-1</span>
+                            <hr>
+                            <span class="etiqueta">NIT:</span>
+                            <span class="valor">#000000</span>
+                        </div>
+                    </div>
+                    <h3>Transferencia Bancaria</h3>
+                    <button class="btn-agradecer">Ya realicé mi aporte</button>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="modalGracias" class="modal">
+            <div class="modal-content">
+                <div class="heart-icon">❤</div>
+                <h2>¡Muchas Gracias!</h2>
+                <p>Tu generosidad ayuda a que la <strong>Fundación El Señor de los Milagros</strong> siga transformando
+                    vidas.</p>
+                <button id="btnCerrar" class="btn-cerrar-modal">Cerrar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />
+    </a>
+
+    <script src="js/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="js/donar.js"></script>
+
+</body>
+
+</html>
