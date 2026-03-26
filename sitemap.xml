@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://anngiw.github.io/FSMWEB/index.html">
+  
+  <url>
+    <loc>https://fsm-web.com/index.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>1.00</priority>
+  </url>
+  
+  <url>
+    <loc>https://fsm-web.com/nosotros.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://fsm-web.com/voluntariado.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://fsm-web.com/causa.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://fsm-web.com/contacto.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://fsm-web.com/dona.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://fsm-web.com/equipo.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://fsm-web.com/involucrate.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>

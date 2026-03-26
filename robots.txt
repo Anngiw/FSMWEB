@@ -1,0 +1,41 @@
+# ==========================================================
+# Robots.txt para Fundación El Señor de los Milagros
+# ==========================================================
+
+# 1. Dirección del Sitemap (Asegúrate de cambiar el dominio al final)
+Sitemap:https://anngiw.github.io/FSMWEB/index.html/sitemap.xml
+
+# 2. Configuración para todos los bots (Google, Bing, etc.)
+User-agent: *
+
+# --- Secciones permitidas ---
+Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+
+# --- Secciones bloqueadas (Lo que faltaba) ---
+# Bloqueamos carpetas de desarrollo que no deben ser públicas
+Disallow: /frontend/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /config/
+Disallow: /temp/
+
+# Bloqueamos archivos sueltos de configuración
+Disallow: /README.md
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.gitignore
+Disallow: /.git/
+
+# Bloqueamos la carpeta de fotos pesadas si no quieres que indexen 
+# cada imagen individual sino que vean la página completa
+Disallow: /assets/img/fotos/
+
+# 3. Bloqueo específico para bots de SPAM o "Scrapers" (Muy profesional)
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /

@@ -36,6 +36,9 @@ FSM-WEB/
 │   └── controladores/  # Lógica de procesamiento de datos
 ├── index.html          # Punto de entrada principal
 └── README.md           # Documentación técnica y social
+└── robots.txt          # Este archivo le dice a Google qué puede indexar
+└── sitemap.xml         # Documentación técnica y social
+
 Proyección a Futuro
 La inclusión de la carpeta backend/ en esta fase inicial garantiza que:
 
