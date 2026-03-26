@@ -221,77 +221,124 @@
 
 /* consultas de medios para adaptabilidad  */
 
-/* bloque de adaptabilidad sin espacios incesarios */
-@media (max_width:1024px) {
+/* ======================================================
+   CONSULTAS DE MEDIOS (MEDIA QUERIES) CORREGIDAS
+   ====================================================== */
 
-    .caja_texto,
-    .caja_video {
+/* 1. Ajuste para Laptop de 14" (4 en fila) */
+@media screen and (max-width: 1440px) {
+    .contenedor-principal-donaciones {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important; 
+        gap: 20px;
+        padding: 40px 2%;
+        align-items: stretch;
+    }
+
+    .grid-cards-donacion {
+        display: contents; 
+    }
+
+    .foto-donacion-izquierda {
+        order: 4; 
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .foto-donacion-izquierda img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0 !important;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 20px 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card img {
+        width: 100% !important;
+        max-width: 80px;
+        height: auto !important;
+    }
+
+    .economica { height: 70px !important; width: auto !important; }
+
+    .card h3 { font-size: 0.95rem; }
+    .card p { font-size: 0.8rem; }
+}
+
+/* 2. Ajuste para Tablets (Pasamos a 2x2 para que no se vea apretado) */
+@media screen and (max-width: 1024px) {
+    .contenedor-principal-donaciones {
+        grid-template-columns: repeat(2, 1fr) !important;
         padding: 30px;
     }
 
-    .grid_cards_donacion {
-        grid-template-columns: repeat(2, 1fr);
+    .caja-texto, .caja-video { padding: 30px; }
+    
+    .encabezado-azul h1 { font-size: 1.9rem; }
+}
+
+/* 3. Ajuste para Móviles Grandes (Todo a una sola columna) */
+@media screen and (max-width: 768px) {
+    .contenedor-principal-donaciones {
+        display: flex !important; /* Volvemos a flex para apilar */
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .grid-cards-donacion {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         gap: 20px;
     }
 
-    .encabezado_azul h1 {
-        font-size: 1.9rem;
-    }
-}
-
-@media (max_width:768px) {
-
-    /* cambio a columna para dispositivos moviles */
-    .fila_historia,
-    .contenedor_principal_donaciones,
-    .seccion_pagos {
-        flex-direction: column;
-    }
-
-    .caja_texto,
-    .caja_video {
+    .foto-donacion-izquierda {
+        order: -1; /* La foto vuelve arriba en móvil */
         width: 100%;
-        min-width: 100%;
+        height: 250px;
+        margin-bottom: 20px !important;
     }
 
-    .grid_cards_donacion {
-        grid-template-columns: 1fr;
-        width: 100%;
+    .card img {
+        max-width: 120px;
     }
 
-    .foto_donacion_izquierda {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    /* ajuste de bordes en metodos de pago */
     .nequi {
         border-right: none;
         border-bottom: 4px solid #f5c114;
     }
 
-    .circulo_video {
-        max-width: 100%;
-        height: auto;
-    }
+    .fila-historia { flex-direction: column; }
+    .seccion-pagos { flex-direction: column; }
 }
 
-@media (max_width:480px) {
-    .encabezado_azul h1 {
-        font-size: 1.5rem;
-    }
-
-    .numero_pago {
-        font-size: 1.2rem;
-    }
-
-    .btn_donar {
+/* 4. Ajuste para Móviles Pequeños */
+@media screen and (max-width: 480px) {
+    .encabezado-azul h1 { font-size: 1.5rem; }
+    .numero-pago { font-size: 1.2rem; }
+    
+    .btn-donar {
         width: 100%;
         text-align: center;
         padding: 12px 0;
     }
 
-    .caja_texto p {
+    .caja-texto p {
         font-size: 1rem;
         line-height: 1.5;
     }

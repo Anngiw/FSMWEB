@@ -34,6 +34,8 @@ select {
     position: relative;
     padding-top: 15px;
     padding-bottom: 40px;/*Espacio para que las líneas respiren */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Opcional: le da profundidad */
 }
 
 .nav-wrapper {
@@ -101,14 +103,21 @@ select {
 /* Logo y Líneas */
 .logo-container {
     flex: 0 0 auto;
-    z-index: 20;/* El logo va por ENCIMA de las líneas */
+    transition: transform 0.5s;
+   
 }
 
 .main-logo {
-    height: 125px;
+    height: 8.5rem;
     width: auto;
     display: block;
-    margin-bottom: -25px;/* Hace que el logo pise las líneas */
+    padding-bottom: 10px;
+    transition: transform 0.5s;
+    
+}
+.main-logo:hover{
+    transform: scale(1.0);/* La imagen se agranda sutilmente */
+
 }
 
 .decorative-lines {
@@ -178,6 +187,7 @@ select {
     margin-bottom: 20px;
     font-weight: 700;
     text-transform: capitalize;/* Asegura que solo la primera letra sea mayúscula */
+    color: #ffffff;
 }
 
 /* Redes Sociales */

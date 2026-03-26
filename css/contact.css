@@ -237,131 +237,140 @@
   filter: brightness(1.2); /* da un efecto de brillo */
 }
 
-/* adaptacion para pantallas de tablet y celular (responsivo)*/
-
-/* ajustes para tabletas y laptops pequeñas (1024px o menos) */
-@media (max-width: 1024px) {
-  
-  /* apilamos los bloques uno debajo de otro para evitar solapamientos */
-  .caja-texto, .caja-video, .mapa, .informacion-contacto {
-    padding: 30px 20px;
-    min-width: 100%; /* obliga a ocupar todo el ancho */
-  }
-
-  .circulo-video {
-    width: 260px;
-    height: 260px;
-  }
-
-  .seccion-final-moderna {
-    flex-direction: column; /* el titulo se pone arriba del contenido */
-    padding-top: 30px;
-  }
-
-  .titulo-final {
-    padding: 2rem 1rem;
-    font-size: 2.5rem;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0;
-  }
-
-  .contenedor-derecho {
-    width: 100%;
-    flex-direction: column; /* texto sobre la chica */
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-  }
-
-  .texto-invitacion {
-    max-width: 85%;
-    margin: 20px auto;
-    padding: 0 10px;
-  }
-
-  .foto-voluntaria {
-    height: 18rem; /* reducimos un poco el tamaño */
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-  .fila-redes-color {
-    position: static; /* vuelve al flujo normal del diseño */
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Corta cualquier elemento que intente salirse por los lados */
 }
 
-/* ajustes para celulares grandes (768px o menos) */
-@media (max-width: 768px) {
-  .encabezado-azul {
-    padding: 3rem 1rem;
-  }
-  
-  .encabezado-azul h1 {
-    font-size: 1.6rem;
-  }
+/* 2. AJUSTE PARA PANTALLAS MEDIANAS (TABLETS / LAPTOPS PEQUEÑAS) */
+/* Aquí activamos el menú hamburguesa antes para evitar que el menú normal se amontone */
+@media screen and (max-width: 1080px) {
+    
+    /* Forzamos la aparición del menú hamburguesa */
+    .nav-wrapper {
+        display: none !important;
+    }
 
-  .fila-historia, .fila-mapa, .seccion-final-moderna {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .menu-toggle {
+        display: flex !important;
+        position: fixed !important;
+        right: 20px !important;
+        top: 20px !important;
+        z-index: 11000 !important;
+    }
 
-  .circulo-video {
-    width: 250px;
-    height: 250px;
-  }
+    /* Ajuste de la sección "Conócenos Más" para que no se desborde */
+    .seccion-final-moderna {
+        flex-direction: column !important;
+        padding: 40px 10px !important;
+        align-items: center !important;
+        border-bottom: 20px solid #0e3b1f;
+    }
 
-  .titulo-final {
-    font-size: 2.2rem;
-  }
+    .titulo-final {
+        width: 100% !important;
+        padding: 20px 0 !important;
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
 
-  .foto-voluntaria {
-    height: auto;
-    max-width: 80%;
-    margin: 20px 0;
-  }
+    .contenedor-derecho {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
 
-  .fila-redes-color {
-    flex-wrap: wrap; /* si los iconos no caben, crean otra fila */
-    justify-content: center;
-    gap: 15px;
-  }
+    .foto-voluntaria {
+        height: auto !important; /* Eliminamos el height fijo de 20rem */
+        max-height: 300px !important;
+        width: auto !important;
+        max-width: 90% !important;
+        margin: 20px auto 0 auto !important; /* Centrado sin márgenes laterales extra */
+    }
+
+    .fila-redes-color {
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 15px !important;
+        margin-bottom: 20px !important;
+    }
 }
 
-/* 3. ajustes para celulares pequeños (480px o menos) */
-@media (max-width: 480px) {
-  .encabezado-azul h1 {
-    font-size: 1.3rem;
-  }
+/* 3. AJUSTE PARA CELULARES (SMARTPHONES) */
+@media screen and (max-width: 768px) {
+    .caja-video {
+        display: flex !important;
+        flex-direction: column !important; /* Pone el video y el título uno sobre otro */
+        height: auto !important; /* Deja que la caja crezca según el video */
+        padding: 20px 10px !important;
+        width: 100% !important;
+    }
 
-  .circulo-video {
-    width: 200px;
-    height: 200px;
-  }
+    /* Contenedor del video responsivo */
+    .circulo-video {
+        width: 90% !important; /* Se ajusta al ancho del celular */
+        max-width: 320px;
+        height: auto !important; /* Deja de ser un círculo perfecto para que quepa el video */
+        aspect-ratio: 1 / 1; /* Mantiene la forma cuadrada/circular */
+        margin: 0 auto !important;
+        border-radius: 15px !important; /* Menos redondeado para que el video se vea mejor */
+    }
 
-  .etiqueta-video {
-    font-size: 1.4rem;
-  }
+    .circulo-video iframe {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    /* Encabezados y textos */
+    .encabezado-azul {
+        padding: 3rem 1rem !important;
+    }
 
-  .franja-amarilla h2 {
-    font-size: 1.3rem;
-  }
+    .encabezado-azul h1 {
+        font-size: 1.5rem !important;
+    }
 
-  .titulo-final {
-    font-size: 1.8rem;
-  }
+    /* Mapa e Información */
+    .fila-mapa {
+        flex-direction: column !important;
+        padding: 20px 10px !important;
+    }
 
-  .icono-social {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .full-yellow-divider {
-    height: 6px; /* linea mas delgada en pantallas pequeñas */
-  }
+    .mapa, .informacion-contacto {
+        min-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Sección de Historia y Video */
+    .fila-historia {
+        flex-direction: column !important;
+    }
+
+    .circulo-video {
+        width: 240px !important;
+        height: 240px !important;
+    }
+
+    /* Footer */
+    .footer-wrapper {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .footer-column {
+        width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+}
+
+/* 4. LIMPIEZA FINAL PARA PANTALLAS MUY PEQUEÑAS */
+@media screen and (max-width: 480px) {
+    .titulo-final {
+        font-size: 1.6rem !important;
+    }
+
+    .icono-social {
+        width: 45px !important;
+        height: 45px !important;
+    }
 }
