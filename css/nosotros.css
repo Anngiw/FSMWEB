@@ -13,40 +13,57 @@ body {
 
 /* Estilos Generales de Títulos */
 .section-title {
-    background-color: var(--blue-dark);
-    color: var(--yellow);
+    color: #f1c40f; 
     text-align: center;
-    padding: 15px 0;
     text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 0px rgba(9, 5, 64, 0.8), 2px 2px 0px rgba(0,0,0,0.1);
+    display: table;             /* El bloque y la línea solo miden lo que el texto */
+    margin: 0 auto 15px;        /* Centra el bloque y deja solo 15px abajo */
+    padding-bottom: 8px;        /* Espacio mínimo entre letras y línea */
+    border-bottom: 5px solid var(--yellow); 
+    border-radius: 2px;
+    background-color: transparent;
+    filter: none;
 }
 
-.yellow-text {
-    color: var(--yellow);
-    font-weight: bold;
-}
 
-/* Timeline */
+
+/* Sección General */
 .history {
-    background-color: var(--blue-dark);
+    background-color: #090540; /* var(--blue-dark) */
     color: white;
-    padding-bottom: 40px;
+    padding: 80px 0;
+    overflow-x: hidden; /* Evita scroll lateral feo */
+    font-family: 'Montserrat', sans-serif;
+    
 }
 
+
+/* Contenedor de la Línea */
 .timeline-container {
     position: relative;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
+    padding: 20px 0;
 }
 
+.fondo{
+    text-shadow: #d4ac0d;
+}
+/* LA LÍNEA HORIZONTAL: Ahora es continua y central */
 .timeline-line {
     height: 4px;
-    background: var(--yellow);
+    background: #f5c114; /* var(--yellow) */
     position: absolute;
-    top: 55px;
+    top: 155px; /* Ajustado para que pase por el centro de las fotos */
     width: 100%;
     z-index: 1;
+    border-radius: 2px;
 }
 
+/* EL GRID: Mantenemos tus 4 columnas */
 .timeline-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -57,31 +74,54 @@ body {
 
 .timeline-item {
     text-align: center;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.timeline-item img {
-    width: 150px;
-    height: 150px;
-    -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
-  mask-image: radial-gradient(circle, black 80%, transparent 100%);
-  
-    object-fit: cover;
-    margin-bottom: 15px;
-    transform: 10s;
-}
-.timeline-item img:hover{
-    width: 180px;
-    height: 180px;
-}
-
+/* TÍTULOS: Por encima de la línea */
 .timeline-item h3 {
-    font-size: 1rem;
-    color: var(--yellow);
+    font-size: 1.1rem;
+    color: #f5c114;
+    font-weight: 800;
+    margin-bottom: 50px; /* Espacio para que la línea pase por la foto */
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .timeline-item h3 span {
-    color: var(--white);
+    display: block;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* IMÁGENES: Los "Nodos" de la historia */
+.timeline-item img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%; /* Círculos perfectos */
+    border: 6px solid #090540; /* Crea un "corte" limpio sobre la línea amarilla */
+    background-color: #090540;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 3px #f5c114; /* Un segundo borde fino amarillo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #f5c114;
+}
+
+/* TEXTO: Por debajo de las fotos */
+.timeline-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #d1d1d1;
+    padding: 0 10px;
 }
 
 /* Achievements */
@@ -171,6 +211,11 @@ body {
     color: #333;
     margin: 0;
     text-align: left;
+}
+
+.yellow-text{
+    color: #f5c114;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* RESPONSIVO: Fundamental para que no se rompa en laptops pequeñas o tablets */

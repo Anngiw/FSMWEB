@@ -15,6 +15,10 @@ html {
     scroll-behavior: smooth;
     /* Desplazamiento suave al navegar por la página */
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -163,8 +167,6 @@ select {
 .btn-donar {
     /* Color de fondo: degradado muy sutil para dar volumen sin ser tosco */
     background: linear-gradient(180deg, #FFCE44 0%, #F5B800 100%);
-
-    /* Tipografía: Usamos el azul oscuro para contraste y la hacemos más refinada */
     color: #090540;
     font-size: 14px;
     font-weight: 790;
