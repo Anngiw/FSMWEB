@@ -14,8 +14,14 @@ section {
  
 }
 h2{
-font-weight: bold;
- 
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #090540;
 }
 
 
@@ -143,13 +149,8 @@ font-weight: bold;
     background-color: #fff; /* Fondo blanco para que la sombra resalte */
     padding: 20px;
     border-radius: 8px; /* Bordes suaves */
-    
-    /* 1. Sombra inicialL: Una sombra muy sutil */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-    
-    /* 2. Transicion: Importante para que el efecto hover sea suave, no brusco */
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    
     display: flex; /* Para que los elementos internos se alineen bien */
     flex-direction: column;
     align-items: center;
@@ -167,7 +168,6 @@ font-weight: bold;
     cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
 }
 
-/* Mantenemos el resto de tus estilos de card igual */
 .card-ancho {
     text-align: center;
 }
@@ -185,7 +185,7 @@ font-weight: bold;
 }
 
 .nombre-yellow {
-    color: #f5c114;
+    color: #ffb804;
     font-weight: bold;
     display: block;
 }

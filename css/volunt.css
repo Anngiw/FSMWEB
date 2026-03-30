@@ -60,9 +60,12 @@
 .wrap-texto {
     max-width: 500px;
 }
-
+.title{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
 .wrap-texto h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.1;
@@ -85,6 +88,7 @@
 h3{
     color: #090540;
     font-weight: bold;
+    font-size: 1.5rem;
     
 }
 
