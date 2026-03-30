@@ -19,7 +19,7 @@ body {
 }
 
 .franja-azul {
-    background: #090540; /* Azul oscuro */
+    background: radial-gradient(circle at center, #0d0a4f 0%, #050320 100%);
     color: white;
     padding: 20px;
     text-align: center;
@@ -116,7 +116,7 @@ body {
     text-align: center;
     overflow: hidden;
     padding-bottom: 40px;
-    background-color: #090540;
+   background: radial-gradient(circle at center, #0d0a4f 0%, #050320 100%)
 }
 
 /* contenedor principal del slider */

@@ -31,45 +31,61 @@ body {
 
 
 /* Sección General */
+/* --- SECCIÓN HISTORIA (CONTENEDOR) --- */
 .history {
-    background-color: #090540; /* var(--blue-dark) */
+    background: radial-gradient(circle at center, #0d0a4f 0%, #050320 100%);
     color: white;
     padding: 80px 0;
-    overflow-x: hidden; /* Evita scroll lateral feo */
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
-    
 }
 
+/* --- TÍTULO CON SOMBRA Y LÍNEA DEBAJO --- */
+.fondo {
+    text-align: center;
+    margin-bottom: 60px; /* Espacio antes de la línea del tiempo */
+}
 
-/* Contenedor de la Línea */
+/* Úsala en tu <h1> */
+.section-title-history {
+    color: #f5c114;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #f5c114; /* La línea decorativa que pediste */
+    /* Sombra firme para que el amarillo resalte */
+    text-shadow: 2px 2px 0px #000, 4px 4px 8px rgba(0,0,0,0.5);
+}
+
+/* --- CONTENEDOR DE LA LÍNEA DEL TIEMPO --- */
 .timeline-container {
     position: relative;
     width: 95%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
-.fondo{
-    text-shadow: #d4ac0d;
-}
-/* LA LÍNEA HORIZONTAL: Ahora es continua y central */
+/* LA LÍNEA AMARILLA (Eje central) */
 .timeline-line {
     height: 4px;
-    background: #f5c114; /* var(--yellow) */
-    position: absolute;
-    top: 155px; /* Ajustado para que pase por el centro de las fotos */
+    background: #f5c114; 
+    position: absolute; /* Crucial para que no ocupe espacio físico */
+    top: 175px;        /* Ajuste para que pase por el medio de las fotos */
     width: 100%;
     z-index: 1;
     border-radius: 2px;
 }
 
-/* EL GRID: Mantenemos tus 4 columnas */
+/* EL GRID DE LOS HITOS */
 .timeline-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Por encima de la línea */
 }
 
 .timeline-item {
@@ -79,13 +95,13 @@ body {
     align-items: center;
 }
 
-/* TÍTULOS: Por encima de la línea */
+/* Títulos de los hitos (ej: Inicios) */
 .timeline-item h3 {
     font-size: 1.1rem;
     color: #f5c114;
     font-weight: 800;
-    margin-bottom: 50px; /* Espacio para que la línea pase por la foto */
-    height: 50px;
+    margin-bottom: 50px; /* Espacio para que la línea pase por debajo libremente */
+    min-height: 50px;    /* Asegura que todos midan lo mismo */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -98,32 +114,56 @@ body {
     font-weight: 400;
 }
 
-/* IMÁGENES: Los "Nodos" de la historia */
+/* IMÁGENES (Los "Nodos") */
 .timeline-item img {
     width: 140px;
     height: 140px;
     object-fit: cover;
-    border-radius: 50%; /* Círculos perfectos */
-    border: 6px solid #090540; /* Crea un "corte" limpio sobre la línea amarilla */
+    border-radius: 50%;
+    border: 6px solid #090540; /* El "corte" sobre la línea */
     background-color: #090540;
     margin-bottom: 20px;
-    box-shadow: 0 0 0 3px #f5c114; /* Un segundo borde fino amarillo */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 3px #f5c114; 
+    transition: transform 0.3s ease;
 }
 
 .timeline-item img:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px #f5c114;
 }
 
-/* TEXTO: Por debajo de las fotos */
+/* Texto descriptivo */
 .timeline-item p {
     font-size: 0.85rem;
     line-height: 1.5;
     color: #d1d1d1;
     padding: 0 10px;
+    max-width: 220px;
 }
 
+/* --- MEDIA QUERIES (Para que no se rompa) --- */
+@media (max-width: 1024px) {
+    .timeline-item img {
+        width: 110px;
+        height: 110px;
+    }
+    .timeline-line {
+        top: 155px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        display: none; /* En móvil mejor sin línea horizontal */
+    }
+    .timeline-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 40px;
+    }
+    .timeline-item {
+        border-bottom: 1px solid rgba(245, 193, 20, 0.2);
+        padding-bottom: 20px;
+    }
+}
 /* Achievements */
 .achievements {
     padding: 50px 5%;

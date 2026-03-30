@@ -9,7 +9,8 @@
 .encabezado-azul h1 {
   color: #f5c114; /* color amarillo para el titulo */
   font-size: 2.0rem; /* tamaño de la letra */
-  font-weight: 800; /* grosor de la letra*/
+  font-weight: 700; /* grosor de la letra*/
+  text-transform: uppercase;
 }
 
 /* bloque 2: seccion de historia y video */
@@ -79,7 +80,7 @@
   object-fit: cover; /* rellena el circulo sin deformar la imagen */
 }
 
-/* texto que aparece debajo del circulo de video */
+/* texto que aparece debajo del  video */
 .etiqueta-video {
   color: #f5c114;
   font-size: 1.8rem;
@@ -101,9 +102,10 @@
   color: #ffffff;
   font-size: 1.8rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* bloque 4: seccion del mapa y datos de contacto */
+/*seccion del mapa y datos de contacto */
 .fila-mapa {
   display: flex;
   flex-wrap: wrap;
@@ -133,16 +135,25 @@
 }
 
 .informacion-contacto h3 {
-  color: #f5c114;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  margin-top: 20px;
+    color: #090540; 
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 800;
+    
+    border-bottom: 5px solid #090540; 
+    border-radius: 2px;
+    background-color: transparent;
+    filter: none;
+    text-align: left;
+  
+ 
 }
 
 .informacion-contacto p {
-  color: #333;
+  color: #000000;
   margin-bottom: 15px;
   font-size: 1.05rem;
+  text-align: justify;
 }
 
 /* resalte para el numero telefonico */
