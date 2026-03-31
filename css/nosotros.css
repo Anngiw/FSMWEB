@@ -79,7 +79,7 @@ body {
     border-radius: 2px;
 }
 
-/* EL GRID DE LOS HITOS */
+/* EL GRID DE LOS LOGROS */
 .timeline-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -95,7 +95,7 @@ body {
     align-items: center;
 }
 
-/* Títulos de los hitos (ej: Inicios) */
+/* Títulos */
 .timeline-item h3 {
     font-size: 1.1rem;
     color: #f5c114;
@@ -210,6 +210,7 @@ body {
     flex: 1;
     /* Ocupa espacio proporcional */
     min-width: 300px;
+   height: 100%;
     /* Evita que se haga demasiado pequeña */
     position: relative;
 }
@@ -531,4 +532,27 @@ body {
     .purpose-text p {
         font-size: 1.1rem;
     }
+}
+/* --- Efecto de Ampliación para Logros --- */
+
+.imagen_logros {
+    /* Suavidad de la animación (0.4 segundos para que se vea elegante) */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+    border-radius: 12px; /* Opcional: para que las fotos de los logros se vean modernas */
+}
+
+.imagen_logros:hover {
+    /* Amplía la imagen un 10% */
+    transform: scale(1.1);
+    
+    /* Le da un toque de brillo para que destaque */
+    filter: brightness(1.1);
+    
+    /* Añade una sombra profunda para dar efecto de relieve */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    
+    /* Asegura que la imagen ampliada quede por encima de otros elementos */
+    position: relative;
+    z-index: 5;
 }
