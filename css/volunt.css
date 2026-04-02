@@ -1,4 +1,4 @@
-
+/* Estilos Globales y Contenedores */
 .main-voluntariado-container section {
     width: 100%;
     box-sizing: border-box;
@@ -10,13 +10,14 @@
     padding: 0 20px;
 }
 
+/* Banner Hero: Configuración de impacto visual */
 .banner-hero-split {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Mitad foto, mitad texto */
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .col-foto-blanca {
@@ -28,20 +29,18 @@
 .col-foto-blanca img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajuste perfecto de la imagen */
+    object-fit: cover;
     object-position: center;
     transition: transform 0.6s ease;
     cursor: pointer;
 }
 
-/* Hover en la foto del banner */
 .col-foto-blanca img:hover {
     transform: scale(1.05);
 }
 
 .col-texto-azul {
-    background-color: #090540; /* Azul Marino Institucional */
-    /* Efecto de franjas verticales sutiles de la imagen original */
+    background-color: #090540;
     background-image: repeating-linear-gradient(
         to right,
         rgba(255, 255, 255, 0.03) 0px,
@@ -49,7 +48,7 @@
         transparent 25px,
         transparent 50px
     );
-    color: white;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,10 +59,12 @@
 .wrap-texto {
     max-width: 500px;
 }
-.title{
+
+.title {
     text-transform: uppercase;
     font-size: 1.5rem;
 }
+
 .wrap-texto h1 {
     font-size: 1.5rem;
     font-weight: 800;
@@ -77,36 +78,37 @@
     opacity: 0.9;
 }
 
-/*Seccion 2: Introduccion */
+/* Sección: Introducción al Voluntariado */
 .introduccion-voluntariado {
     text-align: center;
     padding: 60px 0 20px 0;
-    p{
-        padding: 20px;
-    }
 }
-h3{
-    color: #090540;
-    font-weight: bold;
-    font-size: 1.5rem;
-    
+
+.introduccion-voluntariado p {
+    padding: 20px;
 }
 
 .introduccion-voluntariado h2 {
     color: #f2f2f2;
     font-size: 1.8rem;
     margin-bottom: 15px;
-    background-color: #090540 ;
+    background-color: #090540;
 }
 
-/* Seccion grid cards */
+h3 {
+    color: #090540;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Sección: Cuadrícula de Beneficios o Roles */
 .seccion-grid-cards {
     padding-bottom: 20px;
 }
 
 .contenedor-grid-4-cols {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas exactas */
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
@@ -117,12 +119,10 @@ h3{
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* Sombra inicial sutil */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover en las Cards: Elevación y sombra fuerte */
 .card-voluntario:hover {
     transform: translateY(-12px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -133,22 +133,17 @@ h3{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 220px; /* Aumentamos para dar espacio al nuevo tamaño */
+    min-height: 220px;
     margin-bottom: 20px;
-}
-#ajuste{/*Ajusta el tamaño descuadre de los iconos*/
-    height: 10rem; 
-    width: 15rem;
 }
 
 .card-header img {
-    width: 150px; /* Tamaño mucho más grande según tu referencia */
+    width: 150px;
     height: auto;
     margin-bottom: 20px;
     transition: transform 0.4s ease, filter 0.3s ease;
 }
 
-/* El hover ahora es más notable */
 .card-voluntario:hover .card-header img {
     transform: scale(1.15);
     filter: drop-shadow(0 0 15px rgba(245, 193, 20, 0.5));
@@ -163,39 +158,169 @@ h3{
 
 .card-voluntario p {
     font-size: 0.95rem;
-    color: #555;
+    color: #555555;
     line-height: 1.5;
     margin-top: 15px;
 }
 
-/* Seccion Qr y boton */
+#ajuste {
+    height: 10rem;
+    width: 15rem;
+}
 
+/* Sección: Testimonios y Slider Infinito */
+.seccion-testimonios-root {
+    padding: 80px 0;
+    background-color: #fdfdfd;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.header-v2 {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.badge-v2 {
+    background-color: #f5c114;
+    color: #090540;
+    padding: 7px 18px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(245, 193, 20, 0.3);
+}
+
+.header-v2 h2 {
+    color: #090540;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-v2 p {
+    color: #5d6d7e;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+.contenedor-reducido {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.slider-wrapper-v2 {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.slider-track-v2 {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll-infinito-v2 25s linear infinite;
+}
+
+.slider-track-v2:hover {
+    animation-play-state: paused;
+}
+
+.card-v2 {
+    flex: 0 0 300px;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 12px 30px rgba(9, 5, 64, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.texto-v2 {
+    color: #4a5568;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.perfil-v2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #f2f2f2;
+    padding-top: 20px;
+}
+
+.avatar-v2 {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #090540 0%, #1a1466 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(9, 5, 64, 0.15);
+}
+
+.datos-v2 strong {
+    display: block;
+    color: #090540;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.datos-v2 span {
+    color: #95a5a6;
+    font-size: 0.8rem;
+}
+
+/* Sección: Llamado a la Acción y Registro QR */
 .seccion-accion-qr {
     display: flex !important;
-    flex-direction: column !important; /* Fuerza vertical */
-    align-items: center !important;    /* Fuerza centro horizontal */
+    flex-direction: column !important;
+    align-items: center !important;
     justify-content: center !important;
     width: 100%;
     padding: 80px 0;
     background-color: #ffffff;
     box-sizing: border-box;
-    clear: both; /* Rompe cualquier float anterior */
+    clear: both;
 }
 
 .contenedor-qr {
     width: 180px;
     height: 180px;
-    margin-bottom: 40px; /* Espacio real entre QR y Botón */
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .img-qr {
-    width: 90%; /* Deja un pequeño aire dentro del cuadro blanco */
+    width: 90%;
     height: auto;
     display: block;
 }
@@ -228,10 +353,10 @@ h3{
     box-shadow: 0 10px 25px rgba(9, 5, 64, 0.4);
 }
 
-/*cierre */
+/* Sección: Franja de Cierre Institucional */
 .franja-cierre-azul {
     background-color: #090540;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 50px 20px;
     width: 100%;
@@ -239,50 +364,62 @@ h3{
     display: block;
 }
 
-.franja-cierre-azul .wrap p {
+.franja-cierre-azul p {
     margin: 0 auto;
     max-width: 900px;
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-/*franja cierre- */
-.franja-cierre-azul {
-    background-color: #090540;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-}
-
-.franja-cierre-azul p {
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 0.9rem;
-    line-height: 1.6;
     opacity: 0.8;
 }
 
-/* responsividad */
+/* Animaciones de Interfaz */
+@keyframes scroll-infinito-v2 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-330px * 3)); }
+}
+
+/* Media Queries: Adaptabilidad Dispositivos */
 @media (max-width: 992px) {
     .contenedor-grid-4-cols {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .banner-hero-split {
-        grid-template-columns: 1fr; /* Una columna en móvil */
+        grid-template-columns: 1fr;
     }
+
     .col-foto-blanca {
-        height: 300px; /* Altura fija para la foto en móvil */
+        height: 300px;
     }
+
     .col-texto-azul {
         padding: 40px 20px;
     }
+
     .contenedor-grid-4-cols {
-        grid-template-columns: 1fr; /* Una columna en móvil */
+        grid-template-columns: 1fr;
     }
+
     .wrap-texto h1 {
         font-size: 1.8rem;
+    }
+
+    .header-v2 h2 {
+        font-size: 1.6rem;
+    }
+
+    .card-v2 {
+        flex: 0 0 260px;
+        padding: 25px;
+    }
+
+    .slider-wrapper-v2 {
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
+    @keyframes scroll-infinito-v2 {
+        100% { transform: translateX(calc(-290px * 3)); }
     }
 }

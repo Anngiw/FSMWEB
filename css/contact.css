@@ -1,137 +1,149 @@
-/* bloque 1: encabezado principal azul marino */
+/* configuracion global */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'helvetica neue', arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* seccion de encabezado */
 .encabezado-azul {
-  background-color: #090540; /* color azul muy oscuro de fondo */
-  padding: 5rem; /* espacio interno para que el texto respire */
-  text-align: center; /* centra el texto del encabezado */
-  width: 100%; /* ocupa todo el ancho de la pantalla */
+    background-color: #090540;
+    padding: 5rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .encabezado-azul h1 {
-  color: #f5c114; /* color amarillo para el titulo */
-  font-size: 2.0rem; /* tamaño de la letra */
-  font-weight: 700; /* grosor de la letra*/
-  text-transform: uppercase;
+    color: #f5c114;
+    font-size: 2.0rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
 }
 
-/* bloque 2: seccion de historia y video */
-/* usamos flexbox para dividir la pantalla en dos columnas */
+/* bloque de historia y multimedia */
 .fila-historia {
-  display: flex; /* activa el modo flexible para alinear cajas */
-  flex-wrap: wrap; /* permite que las cajas bajen si no hay espacio */
-  width: 100%;
-  background-color: #ffffff; /* fondo blanco para el texto */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #ffffff;
 }
 
-/* caja izquierda con texto en cursiva */
 .caja-texto {
-  flex: 1; /* toma la mitad del espacio disponible */
-  min-width: 300px; /* ancho minimo antes de saltar abajo */
-  padding: 60px 50px; /* margen interno de la caja de texto */
-  display: flex;
-  align-items: center; /* centra el texto verticalmente */
-  justify-content: center; /* centra el texto horizontalmente */
+    flex: 1;
+    min-width: 300px;
+    padding: 60px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .caja-texto p {
-  font-style: italic; /* estilo de letra inclinada */
-  font-size: 1.1rem;
-  line-height: 1.6; /* separacion entre renglones */
-  text-align: center;
-  color: #333; /* color gris oscuro para el parrafo */
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #333;
+    margin: 0;
 }
 
-/* divisor amarillo que atraviesa todo el ancho visible */
+.caja-video {
+    flex: 1;
+    min-width: 300px;
+    background-color: #090540;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.circulo-video {
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 10px solid #f5c114;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.circulo-video iframe, 
+.circulo-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.etiqueta-video {
+    color: #f5c114;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* divisores y franjas decorativas */
 .full-yellow-divider {
-    width: 100vw;
+    width: 100%;
     height: 10px;
     background-color: #f5c114;
 }
 
-/* caja derecha con el logo circular de video */
-.caja-video {
-  flex: 1; /* toma la otra mitad del espacio */
-  min-width: 300px;
-  background-color: #090540; /* fondo azul oscuro para resaltar el circulo */
-  display: flex;
-  flex-direction: column; /* ordena los elementos uno sobre otro */
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* el circulo que rodea al logo/video */
-.circulo-video {
-  width: 300px; /* ancho fijo del circulo */
-  height: 300px; /* alto fijo del circulo */
-  background-color: #ffffff;
-  border-radius: 50%; /* hace que el cuadro sea redondo */
-  border: 10px solid #f5c114; /* borde amarillo grueso decorativo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* esconde lo que se salga de la forma redonda */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* sombra suave para dar relieve */
-}
-
-/* ajusta el video o imagen dentro del circulo */
-.circulo-video iframe, .circulo-video img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* rellena el circulo sin deformar la imagen */
-}
-
-/* texto que aparece debajo del  video */
-.etiqueta-video {
-  color: #f5c114;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-top: 15px; /* separacion con el circulo */
-}
-
-/* bloque 3: franja intermedia de ubicacion */
 .franja-amarilla {
-  background-color: #090540;
-  width: 100%;
-  border-top: 8px solid #f5c114; /* linea amarilla arriba */
-  border-bottom: 8px solid #f5c114; /* linea amarilla abajo */
-  padding: 15px 0;
-  text-align: center;
+    background-color: #090540;
+    width: 100%;
+    border-top: 8px solid #f5c114;
+    border-bottom: 8px solid #f5c114;
+    padding: 20px 0;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .franja-amarilla h2 {
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
 }
 
-/*seccion del mapa y datos de contacto */
+/* seccion de contacto y ubicacion */
 .fila-mapa {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  gap: 30px; /* espacio entre el mapa y el texto de contacto */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    gap: 30px;
+    box-sizing: border-box;
 }
 
-/* caja que contiene el mapa de google */
 .mapa {
-  flex: 1;
-  min-width: 350px;
-  padding: 10px;
+    flex: 1;
+    min-width: 350px;
 }
 
 .mapa iframe {
-  width: 100%; /* el mapa se estira al ancho de su caja */
-  border: 1px solid #ddd;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
-/* caja con los textos de direccion y telefono */
 .informacion-contacto {
-  flex: 1;
-  min-width: 300px;
-  padding: 10px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .informacion-contacto h3 {
@@ -139,249 +151,182 @@
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: 800;
-    
     border-bottom: 5px solid #090540; 
-    border-radius: 2px;
-    background-color: transparent;
-    filter: none;
-    text-align: left;
-  
- 
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .informacion-contacto p {
-  color: #000000;
-  margin-bottom: 15px;
-  font-size: 1.05rem;
-  text-align: justify;
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    text-align: justify;
+    line-height: 1.5;
 }
 
-/* resalte para el numero telefonico */
 .numero-telefono {
-  font-weight: bold;
-  font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #090540;
 }
 
-/* bloque final: contenedor principal con flexbox */
+/* seccion final y redes sociales */
 .seccion-final-moderna {
-  background-color: #090540;
-  width:100%;
-  display: flex;
-  justify-content: space-between; /* separa el titulo a la izquierda y el contenido a la derecha */
-  align-items: center; /* centra todo verticalmente */
-  position: relative;
-  border-bottom: 30px solid #0e3b1f; /* base verde oscuro donde se apoya la chica */
+    background-color: #090540;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch; 
+    border-bottom: 30px solid #0e3b1f;
+    box-sizing: border-box;
 }
 
-/* titulo amarillo grande a la izquierda */
 .titulo-final {
-  color: #fbc02d;
-  font-size: 2.5rem;
-  font-weight: 900;
-  text-transform: uppercase; /* convierte texto a mayusculas */
-  flex: 1;
-  line-height: 1;
-  margin-bottom: 10px;
-  padding: 6rem;
-  text-align: center;
+    color: #fbc02d;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    flex: 1;
+    padding: 4rem;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* contenedor de la derecha para el texto de invitacion, la chica y las redes */
+/* contenedor para alinear imagen y bloque de redes */
 .contenedor-derecho {
-  flex: 1;
-  display: flex;
-  align-items: flex-end; /* pega la foto de la chica a la franja verde inferior */
-  justify-content:space-between; /* distribuye texto e imagen */
-  position: relative;
-  text-align: center;
+    flex: 1.5;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; 
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
 }
 
-/* parrafo invitando a seguir a la fundacion */
+/* centrado vertical del contenido de redes */
+.bloque-texto-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+    flex: 1;
+    height: 18rem; 
+    padding-bottom: 20px; 
+}
+
 .texto-invitacion {
-  color: #ffffff;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 900px;
-  text-align: center;
-  font-style: italic;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0;
+    font-style: italic;
+    text-align: center;
 }
 
-/* estilo de la foto de la voluntaria */
-.foto-voluntaria {
-  max-width:auto;
-  height: 20rem; /* altura fija para que se vea igual en monitores */
-  display: block;
-  margin-left: 40px; /* separacion con los iconos */
-  text-align: center;
-}
-
-/* fila de iconos oficiales a color */
+/* espacio de iconos para evitar contacto con el fondo */
 .fila-redes-color {
-  display: flex;
-  padding: 10px;
-  flex-direction: row; /* iconos alineados horizontalmente */
-  gap: 30px; /* separacion entre cada logo social */
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0; 
 }
 
-/* diseño de cada boton de red social */
 .icono-social {
-  width: 55px;
-  height: 55px;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.3s ease, filter 0.3s ease; /* animacion suave al tocar */
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-/* imagen del logo dentro del circulo social */
 .icono-social img {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* pequeña sombra bajo el icono */
+    width: 100%;
+    height: auto;
 }
 
-/* efecto cuando pones el raton encima de una red social */
 .icono-social:hover {
-  transform: translateY(-8px) scale(1.1); /* el icono sube y se agranda un poco */
-  filter: brightness(1.2); /* da un efecto de brillo */
+    transform: translateY(-8px);
 }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* Corta cualquier elemento que intente salirse por los lados */
+/* posicionamiento de foto apoyada en la base */
+.foto-voluntaria {
+    height: 18rem;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    align-self: flex-end;
 }
 
-/* 2. AJUSTE PARA PANTALLAS MEDIANAS (TABLETS / LAPTOPS PEQUEÑAS) */
-/* Aquí activamos el menú hamburguesa antes para evitar que el menú normal se amontone */
+/* ajustes para resoluciones de pantalla */
 @media screen and (max-width: 1080px) {
+    .encabezado-azul { padding: 3rem 1rem; }
     
-    /* Forzamos la aparición del menú hamburguesa */
-    .nav-wrapper {
-        display: none !important;
-    }
-
-    .menu-toggle {
-        display: flex !important;
-        position: fixed !important;
-        right: 20px !important;
-        top: 20px !important;
-        z-index: 11000 !important;
-    }
-
-    /* Ajuste de la sección "Conócenos Más" para que no se desborde */
     .seccion-final-moderna {
-        flex-direction: column !important;
-        padding: 40px 10px !important;
-        align-items: center !important;
-        border-bottom: 20px solid #0e3b1f;
+        flex-direction: column;
     }
 
-    .titulo-final {
-        width: 100% !important;
-        padding: 20px 0 !important;
-        font-size: 2rem !important;
-        text-align: center !important;
+    .titulo-final { 
+        padding: 2rem; 
+        width: 100%; 
     }
 
     .contenedor-derecho {
-        width: 100% !important;
-        flex-direction: column !important;
-        align-items: center !important;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
     }
 
-    .foto-voluntaria {
-        height: auto !important; /* Eliminamos el height fijo de 20rem */
-        max-height: 300px !important;
-        width: auto !important;
-        max-width: 90% !important;
-        margin: 20px auto 0 auto !important; /* Centrado sin márgenes laterales extra */
+    .bloque-texto-redes {
+        height: auto;
+        padding-bottom: 30px;
     }
 
     .fila-redes-color {
-        justify-content: center !important;
-        width: 100% !important;
-        gap: 15px !important;
-        margin-bottom: 20px !important;
+        padding: 30px 0;
+    }
+    
+    .foto-voluntaria { 
+        height: 15rem; 
+        margin-top: 10px; 
     }
 }
 
-/* 3. AJUSTE PARA CELULARES (SMARTPHONES) */
 @media screen and (max-width: 768px) {
-    .caja-video {
-        display: flex !important;
-        flex-direction: column !important; /* Pone el video y el título uno sobre otro */
-        height: auto !important; /* Deja que la caja crezca según el video */
-        padding: 20px 10px !important;
-        width: 100% !important;
+    .fila-historia, .fila-mapa {
+        flex-direction: column;
     }
 
-    /* Contenedor del video responsivo */
-    .circulo-video {
-        width: 90% !important; /* Se ajusta al ancho del celular */
-        max-width: 320px;
-        height: auto !important; /* Deja de ser un círculo perfecto para que quepa el video */
-        aspect-ratio: 1 / 1; /* Mantiene la forma cuadrada/circular */
-        margin: 0 auto !important;
-        border-radius: 15px !important; /* Menos redondeado para que el video se vea mejor */
-    }
-
-    .circulo-video iframe {
-        width: 100% !important;
-        height: 100% !important;
-    }
-    /* Encabezados y textos */
-    .encabezado-azul {
-        padding: 3rem 1rem !important;
-    }
-
-    .encabezado-azul h1 {
-        font-size: 1.5rem !important;
-    }
-
-    /* Mapa e Información */
-    .fila-mapa {
-        flex-direction: column !important;
-        padding: 20px 10px !important;
-    }
-
-    .mapa, .informacion-contacto {
-        min-width: 100% !important;
-        padding: 0 !important;
-    }
-
-    /* Sección de Historia y Video */
-    .fila-historia {
-        flex-direction: column !important;
+    .caja-texto, .caja-video, .mapa, .informacion-contacto {
+        width: 100%;
+        min-width: 100%;
+        padding: 30px 20px;
     }
 
     .circulo-video {
-        width: 240px !important;
-        height: 240px !important;
+        width: 250px;
+        height: 250px;
     }
 
-    /* Footer */
-    .footer-wrapper {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    .footer-column {
-        width: 100% !important;
-        margin-bottom: 25px !important;
-    }
+    .titulo-final { font-size: 1.8rem; }
 }
 
-/* 4. LIMPIEZA FINAL PARA PANTALLAS MUY PEQUEÑAS */
 @media screen and (max-width: 480px) {
-    .titulo-final {
-        font-size: 1.6rem !important;
+    .encabezado-azul h1 { font-size: 1.4rem; }
+    
+    .circulo-video {
+        width: 200px;
+        height: 200px;
+        border-width: 6px;
     }
 
-    .icono-social {
-        width: 45px !important;
-        height: 45px !important;
-    }
+    .etiqueta-video { font-size: 1.4rem; }
+    
+    .titulo-final { font-size: 1.5rem; }
+    
+    .icono-social { width: 45px; height: 45px; }
 }

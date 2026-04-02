@@ -1,149 +1,128 @@
-/* reglas generales del contenedor principal  */
-.main-page-container {
-    width: 100%;
-    background-color: #ffffff;
-    font-family: sans-serif;
+/* configuracion de variables - refinadas */
+:root {
+    --azul-corporativo: #090540;
+    --amarillo-brillante: #f5c114;
+    --blanco-puro: #ffffff;
+    --gris-claro: #f1f5f9;
+    --texto-principal: #334155;
+    --texto-secundario: #64748b;
+    --transicion: all 0.3s ease;
 }
 
-/*bloque 1: historia y video cuadrado */
+/* forzar mayusculas en todos los h2 del sitio */
+h2 {
+    text-transform: uppercase;
+}
+
+
+.main-page-container {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    color: var(--texto-principal);
+    overflow-x: hidden; /* evita scroll horizontal residual */
+}
+
+/* seccion historia - corregida */
 .encabezado-azul {
-    background-color: #090540;
-    padding: 1rem 1rem;
+    background-color: var(--azul-corporativo);
+    padding: 40px 20px;
     text-align: center;
 }
 
 .encabezado-azul h1 {
-    color: #f5c114;
-   font-size: 1.6rem;
-    font-weight: 800;
-    text-transform: uppercase;
+    color: var(--amarillo-brillante);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .fila-historia {
     display: flex;
-    flex-wrap: wrap;
-    background-color: #ffffff;
-}
-
-.caja-texto {
-    flex: 1;
-    min-width: 320px;
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.caja-texto p {
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #333;
-    text-align: center;
-}
-
-.caja-video {
-    flex: 1;
-    min-width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-}
-
-.circulo-video {
-    width: 100%;
-    max-width: 450px;
-    aspect-ratio: 16 / 9;
-    background-color: #ffffff;
-    border-radius: 12px;
-    border: 6px solid #f5c114;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.circulo-video img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.etiqueta-video {
-    color: #f5c114;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-/* bloque 2: seccion de donaciones  */
-.franja-amarilla-info {
-    background-color: #090540;
-    border-top: 6px solid #f5c114;
-    border-bottom: 6px solid #f5c114;
-    padding: 30px 10px;
-    text-align: center;
-    color: white;
-}
-
-.contenedor-principal-donaciones {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 50px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
     gap: 30px;
     align-items: center;
 }
 
-.foto-donacion-izquierda {
+.caja-texto, .caja-video {
     flex: 1;
-    min-width: 300px;
 }
 
-.foto-donacion-izquierda img {
+.circulo-video {
     width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 15px;
-    margin-bottom: -80px;
+    border: 5px solid var(--amarillo-brillante);
+    overflow: hidden;
+}
+
+.circulo-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* seccion donaciones - grid corregido */
+.franja-amarilla-info {
+    background-color: var(--azul-corporativo);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--amarillo-brillante);
+}
+
+.franja-amarilla-info h2 {
+    color: var(--amarillo-brillante);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contenedor-principal-donaciones {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .grid-cards-donacion {
-    flex: 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
     gap: 20px;
 }
 
 .card {
+    background: var(--blanco-puro);
+    border-radius: 15px;
+    padding: 25px;
     text-align: center;
-    padding: 15px;
+    border: 1px solid var(--gris-claro);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: var(--transicion);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--amarillo-brillante);
 }
 
 .card img {
-    width: 15rem;
+    width: 60px;
+    height: 60px;
     margin-bottom: 15px;
-}
-.economica{
-    height: 13.5rem;
-    width: auto;
 }
 
 .card h3 {
-     color: #090540;
-    /* Texto en el azul oscuro del logo:*/
-    font-size: 1.4rem;
-    /* Mantenemos tu tamaño original */
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #f5c114;
-    display: inline-block;
+    color: var(--azul-corporativo);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-/* bloque 3: metodos de pago  */
+.card p {
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    line-height: 1.4;
+}
+
+/* seccion pagos - numeros en blanco */
 .seccion-pagos {
     display: flex;
     flex-wrap: wrap;
@@ -154,200 +133,68 @@
     flex: 1;
     min-width: 300px;
     padding: 50px 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    /* apila elementos uno sobre otro */
     align-items: center;
-    /* centra todo horizontalmente de forma obligatoria */
-    justify-content: center;
-    text-align: center;
 }
 
 .nequi {
-    background: radial-gradient(circle at center, #0d0a4f 0%, #050320 100%);
-    color: white;
-    border-right: 4px solid #f5c114;
+    background: linear-gradient(135deg, #090540 0%, #050320 100%);
+    border-right: 2px solid var(--amarillo-brillante);
 }
 
 .bbva {
-    background: radial-gradient(circle at center, #008a45 0%, #004d26 100%);
-    color: #090540;
+    background: linear-gradient(135deg, #004481 0%, #043263 100%);
 }
 
-.logos-bancos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.logos-bancos img {
-    height: 45px;
-}
-
+/* correccion de color de numero */
 .numero-pago {
+    color: var(--blanco-puro) !important;
     font-size: 1.8rem;
-    font-weight: bold;
-    margin: 12px 0;
-    width: 100%;
-    color: #ffffff;
+    font-weight: 800;
+    margin: 15px 0;
 }
 
-/* estilo del boton centrado */
 .btn-donar {
-    display: block;
-    /* lo tratamos como bloque */
-    width: fit-content;
-    /* para que solo ocupe el espacio de su texto */
-    padding: 10px 45px;
-    border-radius: 25px;
+    padding: 10px 30px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    margin: 10px auto 0 auto;
-    /* el margin auto lo fuerza al centro */
 }
 
-.nequi .btn-donar {
-    background-color: #f5c114;
-    color: #090540;
-}
+/* Querys */
 
-.bbva .btn-donar {
-    background-color: #090540;
-    color: white;
-}
-
-.btn-donar:hover {
-    transform: scale(1.05);
-}
-
-
-/* consultas de medios para adaptabilidad  */
-
-/* ======================================================
-   CONSULTAS DE MEDIOS (MEDIA QUERIES) CORREGIDAS
-   ====================================================== */
-
-/* 1. Ajuste para Laptop de 14" (4 en fila) */
-@media screen and (max-width: 1440px) {
-    .contenedor-principal-donaciones {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important; 
-        gap: 20px;
-        padding: 40px 2%;
-        align-items: stretch;
-    }
-
-    .grid-cards-donacion {
-        display: contents; 
-    }
-
-    .foto-donacion-izquierda {
-        order: 4; 
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        background-color: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
-
-    .foto-donacion-izquierda img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        margin: 0 !important;
-    }
-
-    .card {
-        background-color: #ffffff;
-        border-radius: 15px;
-        padding: 20px 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .card img {
-        width: 100% !important;
-        max-width: 80px;
-        height: auto !important;
-    }
-
-    .economica { height: 70px !important; width: auto !important; }
-
-    .card h3 { font-size: 0.95rem; }
-    .card p { font-size: 0.8rem; }
-}
-
-/* 2. Ajuste para Tablets (Pasamos a 2x2 para que no se vea apretado) */
+/* tablets y laptops pequeñas */
 @media screen and (max-width: 1024px) {
-    .contenedor-principal-donaciones {
-        grid-template-columns: repeat(2, 1fr) !important;
-        padding: 30px;
-    }
-
-    .caja-texto, .caja-video { padding: 30px; }
-    
-    .encabezado-azul h1 { font-size: 1.9rem; }
-}
-
-/* 3. Ajuste para Móviles Grandes (Todo a una sola columna) */
-@media screen and (max-width: 768px) {
-    .contenedor-principal-donaciones {
-        display: flex !important; /* Volvemos a flex para apilar */
+    .fila-historia {
         flex-direction: column;
-        padding: 20px;
+        text-align: center;
     }
 
     .grid-cards-donacion {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
     }
+}
 
-    .foto-donacion-izquierda {
-        order: -1; /* La foto vuelve arriba en móvil */
-        width: 100%;
-        height: 250px;
-        margin-bottom: 20px !important;
-    }
-
-    .card img {
-        max-width: 120px;
+/* celulares */
+@media screen and (max-width: 768px) {
+    .grid-cards-donacion {
+        grid-template-columns: 1fr; /* 1 columna en celular */
     }
 
     .nequi {
         border-right: none;
-        border-bottom: 4px solid #f5c114;
+        border-bottom: 2px solid var(--amarillo-brillante);
     }
 
-    .fila-historia { flex-direction: column; }
-    .seccion-pagos { flex-direction: column; }
-}
-
-/* 4. Ajuste para Móviles Pequeños */
-@media screen and (max-width: 480px) {
-    .encabezado-azul h1 { font-size: 1.5rem; }
-    .numero-pago { font-size: 1.2rem; }
-    
-    .btn-donar {
-        width: 100%;
-        text-align: center;
-        padding: 12px 0;
+    .numero-pago {
+        font-size: 1.5rem;
     }
 
-    .caja-texto p {
-        font-size: 1rem;
-        line-height: 1.5;
+    .metodo-pago {
+        padding: 40px 20px;
     }
 }
