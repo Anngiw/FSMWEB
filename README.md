@@ -51,6 +51,24 @@ Se ha definido un alcance técnico específico para garantizar la integridad del
 
 ---
 
+## 🚀 Proyección a Futuro
+La implementación de este modelo híbrido y la arquitectura MVC garantizan tres pilares fundamentales para la Fundación:
+
+* **Mantenibilidad:** Los cambios en los datos críticos de la plataforma se reflejan en tiempo real a través del panel administrativo, eliminando la necesidad de modificar el código fuente HTML para actualizaciones rutinarias.
+* **Seguridad:** Aislamiento total de las credenciales de acceso y la lógica de negocio en el lado del servidor, protegiendo la información sensible de la institución.
+* **Integridad:** Al restringir las capacidades de edición solo a campos específicos, se protege la estructura visual y la identidad digital diseñada en la Fase 1 frente a cambios accidentales.
+
+---
+
+## ✒️ Desarrollado por:
+* **Fase 1 (Frontend):** [Angie Lorena Arias Vasquez](https://github.com/Anngiw) - *Estudiante de Ingeniería de Software (3er Semestre), Uniempresarial, Bogotá.*
+* **Fase 2 (Backend & Seguridad):** [Angie Lorena Arias Vasquez](https://github.com/Anngiw) - *Implementación de Arquitectura Híbrida y Persistencia con PHP/MySQL.*
+
+---
+*Este proyecto forma parte del programa de fortalecimiento digital en colaboración con el **Banco de Alimentos de Bogotá**.*
+
+---
+
 ## Estructura del Repositorio (Actualizada v2.0)
 Adaptando el patrón **MVC**, el proyecto se organiza para separar la lógica de negocio de la interfaz:
 
@@ -70,20 +88,3 @@ FSM-WEB/
 ├── robots.txt          # Configuración para motores de búsqueda
 └── sitemap.xml         # Mapa del sitio para indexación
 
----
-
-## 🚀 Proyección a Futuro
-La implementación de este modelo híbrido y la arquitectura MVC garantizan tres pilares fundamentales para la Fundación:
-
-* **Mantenibilidad:** Los cambios en los datos críticos de la plataforma se reflejan en tiempo real a través del panel administrativo, eliminando la necesidad de modificar el código fuente HTML para actualizaciones rutinarias.
-* **Seguridad:** Aislamiento total de las credenciales de acceso y la lógica de negocio en el lado del servidor, protegiendo la información sensible de la institución.
-* **Integridad:** Al restringir las capacidades de edición solo a campos específicos, se protege la estructura visual y la identidad digital diseñada en la Fase 1 frente a cambios accidentales.
-
----
-
-## ✒️ Desarrollado por:
-* **Fase 1 (Frontend):** [Angie Lorena Arias Vasquez](https://github.com/Anngiw) - *Estudiante de Ingeniería de Software (3er Semestre), Uniempresarial, Bogotá.*
-* **Fase 2 (Backend & Seguridad):** [Angie Lorena Arias Vasquez](https://github.com/Anngiw) - *Implementación de Arquitectura Híbrida y Persistencia con PHP/MySQL.*
-
----
-*Este proyecto forma parte del programa de fortalecimiento digital en colaboración con el **Banco de Alimentos de Bogotá**.*
