@@ -1,0 +1,134 @@
+/* admin/css/panel.css */
+:root {
+    --sidebar-width: 280px; /* Ancho exacto de tu sidebar */
+    --fsm-blue: #090540;
+    --fsm-gold: #f5c114;
+    --bg-main: #f4f7f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ESTA PARTE EVITA QUE SE SOLAPEN */
+.panel-main {
+    margin-left: var(--sidebar-width); /* Empuja el contenido a la derecha del sidebar */
+    padding: 40px;
+    min-height: 100vh;
+    width: calc(100% - var(--sidebar-width)); /* El ancho es el total menos el sidebar */
+    transition: all 0.3s ease;
+}
+
+/* DIVISOR DE SECCIÓN */
+.section-divider {
+    margin: 40px 0 25px;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+}
+
+.section-divider span {
+    position: absolute;
+    top: -10px;
+    background: var(--bg-main);
+    padding-right: 15px;
+    color: #95a5a6;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+
+/* GRID DE CARDS */
+.frontend-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.cms-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+
+.cms-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(9, 5, 64, 0.1);
+}
+
+.cms-icon {
+    font-size: 1.8rem;
+    color: var(--fsm-blue);
+    margin-bottom: 15px;
+}
+
+.cms-info h4 {
+    color: var(--fsm-blue);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.cms-info p {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.btn-cms {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--fsm-blue);
+    border: 2px solid var(--fsm-blue);
+    padding: 8px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-cms:hover {
+    background: var(--fsm-blue);
+    color: var(--fsm-gold);
+}
+
+/* RESPONSIVO: Si la pantalla es pequeña, quitamos el margen del sidebar */
+@media (max-width: 992px) {
+    .panel-main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
+.panel-main {
+    margin-left: 280px; /* Tu ancho de sidebar */
+    width: calc(100% - 280px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .panel-main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Capa oscura de fondo para cerrar el menú al tocar fuera */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+}
+.sidebar-overlay.active { display: block; }

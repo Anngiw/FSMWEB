@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="cabecera" id="main-header"></header>
+    <?php include 'frontend/partes/header.php'; ?>
     <main class="contenedor-equipo-completo">
 
         <section class="franja-azul-oscuro">
@@ -59,7 +59,7 @@
                         <img src="assets\img\fotos\voluntariados.png" alt="Voluntarios" class="foto-simple">
                     </div>
                     <div class="columna-texto">
-                        <p>A veces creemos que para cambiar el mundo se necesitan grandes acciones…  pero la verdad es
+                        <p>A veces creemos que para cambiar el mundo se necesitan grandes acciones… pero la verdad es
                             que todo empieza con algo pequeño: <br> <br>Estar presente. Hay adultos mayores que han dado toda una
                             vida por otros y hoy solo necesitan sentir que aún importan, que aún son vistos, que aún son
                             parte. Tu tiempo puede convertirse en su momento más esperado del día. Tu compañía, en un
@@ -129,7 +129,7 @@
         </section>
 
     </main>
-    <footer id="main-footer"></footer>
+    <?php include 'frontend/partes/footer.php'; ?>
 
     <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />

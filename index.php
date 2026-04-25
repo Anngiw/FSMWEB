@@ -35,7 +35,8 @@
 </head>
 
 <body>
-    <header class="cabecera" id="main-header"></header>
+   <?php include 'frontend/partes/header.php'; ?>
+    
     <main class="main-page-container">
 
         <section class="section-hero">
@@ -44,7 +45,7 @@
                     <h1 class="quote-fsm">Cuidando  <br> a quienes <br> más nos necesitan.</h1>
                     <div class="hero-actions">
                         <a href="causa.html" class="btn-yellow">SERVICIO</a>
-                        <a href="involucrate.html" class="btn-yellow">INGRESA</a>
+                        <a href="./admin/vistas/login.php" class="btn-yellow">INGRESA</a>
                     </div>
                 </div>
                 <div class="hero-image-block">
@@ -145,7 +146,7 @@
     </main>
 
 
-    <footer id="main-footer"></footer>
+   <?php include 'frontend/partes/footer.php'; ?>
 
     <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />

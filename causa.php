@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <header class="cabecera" id="main-header"></header>
+    <?php include 'frontend/partes/header.php'; ?>
+
     <section class="contenedor-playlist">
         <div class="encabezado-seccion">
             <h2 class="titulo-principal">Nuestra historia la cuentan todos</h2>
@@ -172,7 +173,7 @@
 
 
 
-    <footer id="main-footer"></footer>
+    <?php include 'frontend/partes/footer.php'; ?>
 
     <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />

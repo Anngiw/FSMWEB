@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="cabecera" id="main-header"></header>
+    <?php include 'frontend/partes/header.php'; ?>
 
     <main class="seccion-contacto">
 
@@ -96,7 +96,7 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="youtube">
                     </a>
 
-                    <a href="https://www.facebook.com/fundamilagros.viejitos"" target="_blank" class="icono-social fb"
+                    <a href="https://www.facebook.com/fundamilagros.viejitos"" target=" _blank" class="icono-social fb"
                         title="síguenos en facebook">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
                             alt="facebook">
@@ -122,8 +122,8 @@
 
     </main>
 
+    <?php include 'frontend/partes/footer.php'; ?>
 
-    <footer id="main-footer"></footer>
 
     <a href="https://wa.me/573124939619" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <img src="assets\img\redes\Wpp.webp" alt="WhatsApp" />

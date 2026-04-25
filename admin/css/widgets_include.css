@@ -1,0 +1,162 @@
+
+/* CONTENEDOR PRINCIPAL DE WIDGETS */
+.upper-management-grid {
+    display: grid;
+    /* Grid flexible que evita el desbordamiento */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* TARJETAS (CARDS) */
+.management-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(9, 5, 64, 0.05);
+    border: 1px solid #edf2f7;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Evita que el contenido interno fuerce el ancho del card */
+}
+
+/* CABECERAS DE TARJETA */
+.card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    color: #090540;
+}
+
+.card-head i {
+    font-size: 1.4rem;
+    color: #f5c114; /* Dorado FSM */
+}
+
+.card-head h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* --- FORMULARIO DE AGENDA --- */
+.form-agenda-quick {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-agenda-quick input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #edf2f7;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.form-agenda-quick input[type="text"]:focus {
+    border-color: #f5c114;
+}
+
+.form-row-inline {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-row-inline input[type="time"] {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid #edf2f7;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color: #090540;
+}
+
+/* BOTÓN AGENDAR - DISEÑO ORIGINAL RESTAURADO */
+.btn-agenda {
+    background-color: #090540; /* Azul Profundo */
+    color: #f5c114; /* Dorado */
+    border: 2px solid #090540;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(9, 5, 64, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.btn-agenda:hover {
+    background-color: #f5c114; /* Inversión de colores */
+    color: #090540;
+    border-color: #f5c114;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(245, 193, 20, 0.3);
+}
+
+.btn-agenda:active {
+    transform: translateY(0);
+}
+
+/* --- TABLA DE LOGS --- */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Scroll interno si la tabla es muy ancha */
+    scrollbar-width: thin;
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+.log-table th {
+    text-align: left;
+    padding: 12px 10px;
+    font-size: 0.75rem;
+    color: #95a5a6;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f4f8;
+}
+
+.log-table td {
+    padding: 15px 10px;
+    font-size: 0.85rem;
+    color: #2d3436;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+/* PILLS DE ESTADO */
+.pill-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.pill-status.success {
+    background-color: #e6ffed;
+    color: #2ecc71;
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 1200px) {
+    .upper-management-grid {
+        grid-template-columns: 1fr; /* Se apilan para evitar apretamiento */
+    }
+}

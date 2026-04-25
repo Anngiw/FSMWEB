@@ -1,0 +1,62 @@
+/* admin/css/layout_master.css */
+
+:root {
+    --sidebar-width: 280px;
+    --bg-main: #f4f7f6;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden; /* Evita scroll lateral */
+    min-height: 100vh;
+}
+
+
+/* EL CONTENEDOR MAESTRO */
+.panel-main {
+    margin-left: var(--sidebar-width); 
+    width: calc(100% - var(--sidebar-width));
+    padding: 40px; /* El "aire" profesional del dashboard */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacio entre reloj y formulario */
+    transition: var(--transition);
+}
+
+/* COMPORTAMIENTO DEL HEADER (Reloj y Perfil) */
+.panel-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: transparent;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .panel-main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Capa oscura de fondo para cerrar el menú al tocar fuera */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+}
+.sidebar-overlay.active { display: block; }

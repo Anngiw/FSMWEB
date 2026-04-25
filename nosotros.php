@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header id="main-header"></header>
+    <?php include 'frontend/partes/header.php'; ?>
 
     <main>
         <section class="history">

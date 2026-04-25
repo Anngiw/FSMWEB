@@ -1,0 +1,121 @@
+/* admin/css/forms_styles.css */
+/* DIVISOR DE SECCIÓN */
+.section-divider {
+    margin: 0 0 25px;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+}
+
+.section-divider span {
+    position: absolute;
+    top: -10px;
+    background: var(--bg-main);
+    padding-right: 15px;
+    color: #95a5a6;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+/* Contenedor tipo tarjeta */
+.admin-main-form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+/* Títulos de sección (Azul con línea dorada) */
+.form-block-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #090540; /* FSM Blue */
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5c114; /* FSM Gold */
+    text-transform: uppercase;
+}
+
+/* Grid de 2 columnas adaptable */
+.form-row-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Estilo de los Inputs e Iconos */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    color: #adb5bd;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1.5px solid #edf2f7;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fcfdfe;
+    transition: 0.3s;
+}
+
+.input-with-icon input:focus {
+    outline: none;
+    border-color: #090540;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(9, 5, 64, 0.05);
+}
+
+/* Botón Estándar de Acción */
+.form-actions {
+    margin-top: 20px;
+    padding-top: 25px;
+    border-top: 1px solid #edf2f7;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-fsm-standard {
+    background-color: #090540;
+    color: #ffffff;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.btn-fsm-standard:hover {
+    background-color: #16106e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

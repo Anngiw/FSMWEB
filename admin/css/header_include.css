@@ -1,0 +1,60 @@
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #edf2f7;
+    margin-bottom: 35px;
+}
+
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hamburger-btn {
+    display: none; /* Oculto en PC */
+    background: #090540;
+    color: #f5c114;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#live-clock {
+    color: #090540;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+#live-date {
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.user-meta {
+    border-left: 4px solid #f5c114;
+    padding-left: 15px;
+}
+
+/* Solo mostramos el botón en pantallas pequeñas */
+@media (max-width: 992px) {
+    .hamburger-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
