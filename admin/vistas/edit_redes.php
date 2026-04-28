@@ -1,3 +1,6 @@
+<?php
+require_once 'check_session.php'; 
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -95,6 +98,7 @@
             </form>
         </section>
     </main>
+    <script src="../js/anti_back.js"></script>
 
     <script>
         const btnOpen = document.getElementById('openSidebar');

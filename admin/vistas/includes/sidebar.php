@@ -1,3 +1,6 @@
+<?php
+require_once 'check_session.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,41 +15,41 @@
 
 <body>
     <main>
-       <aside class="panel-sidebar">
-    <div class="sidebar-header-section">
-        <div class="sidebar-brand">
-            <img src="../img/logo.png" alt="Logo FSM" class="panel-logo">
-            <h2>FSM<span>ADMIN</span></h2>
-        </div>
-    </div>
+        <aside class="panel-sidebar">
+            <div class="sidebar-header-section">
+                <div class="sidebar-brand">
+                    <img src="../img/logo.png" alt="Logo FSM" class="panel-logo">
+                    <h2>FSM<span>ADMIN</span></h2>
+                </div>
+            </div>
 
-    <nav class="sidebar-nav">
-        <div class="nav-group">PRINCIPAL</div>
-        <a href="panel.php" class="nav-link"><i class="fas fa-home"></i><span>Inicio</span></a>
+            <nav class="sidebar-nav">
+                <div class="nav-group">PRINCIPAL</div>
+                <a href="panel.php" class="nav-link"><i class="fas fa-home"></i><span>Inicio</span></a>
 
-        <div class="nav-group">EDICIÓN FRONTEND</div>
-        <a href="edit_contacto.php" class="nav-link"><i class="fas fa-envelope-open-text"></i><span>Contacto</span></a>
-        <a href="edit_redes.php" class="nav-link"><i class="fas fa-share-nodes"></i><span>Redes Sociales</span></a>
-        <a href="edit_voluntariado.php" class="nav-link"><i class="fas fa-users"></i><span>Voluntariado</span></a>
-        <a href="edit_donar.php" class="nav-link"><i class="fas fa-gift"></i><span>Donar</span></a>
-        <a href="edit_nosotros.php" class="nav-link"><i class="fas fa-hand-holding-heart"></i><span>Sobre Nosotros</span></a>
+                <div class="nav-group">EDICIÓN FRONTEND</div>
+                <a href="edit_contacto.php" class="nav-link"><i class="fas fa-envelope-open-text"></i><span>Contacto</span></a>
+                <a href="edit_redes.php" class="nav-link"><i class="fas fa-share-nodes"></i><span>Redes Sociales</span></a>
+                <a href="edit_voluntariado.php" class="nav-link"><i class="fas fa-users"></i><span>Voluntariado</span></a>
+                <a href="edit_donar.php" class="nav-link"><i class="fas fa-gift"></i><span>Donar</span></a>
+                <a href="edit_nosotros.php" class="nav-link"><i class="fas fa-hand-holding-heart"></i><span>Sobre Nosotros</span></a>
 
-        <div class="nav-group">USUARIO</div>
-        <a href="editar_perfil.php" class="nav-link">
-            <i class="fas fa-user-shield"></i><span>Mi Perfil</span>
-        </a>
-    </nav>
+                <div class="nav-group">USUARIO</div>
+                <a href="editar_perfil.php" class="nav-link">
+                    <i class="fas fa-user-shield"></i><span>Mi Perfil</span>
+                </a>
+            </nav>
 
-    <div class="sidebar-footer-section">
-        <div class="sidebar-exit">
-            <a href="../../logout.php" class="btn-logout">
-                <i class="fas fa-power-off"></i><span>Cerrar Sesión</span>
-            </a>
-        </div>
-    </div>
-</aside>
+            <div class="sidebar-footer-section">
+                <div class="sidebar-exit">
+                    <a href="../../logout.php" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+        </aside>
 
-<div id="overlay" class="sidebar-overlay"></div>
+        <div id="overlay" class="sidebar-overlay"></div>
     </main>
 
 </body>

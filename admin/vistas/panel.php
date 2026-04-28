@@ -1,18 +1,22 @@
-<!DOCTYPE html>
+<?php
+require_once 'check_session.php'; 
+?><!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | FSM Admin</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="../css/panel.css"> 
+
+    <link rel="stylesheet" href="../css/panel.css">
     <link rel="stylesheet" href="../css/sidebar_include.css">
     <link rel="stylesheet" href="../css/header_include.css">
     <link rel="stylesheet" href="../css/widgets_include.css">
 </head>
+
 <body class="panel-admin-body">
 
     <div class="sidebar-overlay" id="overlay"></div>
@@ -20,7 +24,7 @@
     <?php include 'includes/sidebar.php'; ?>
 
     <main class="panel-main">
-        
+
         <?php include 'includes/heder_include.php'; ?>
 
         <?php include 'includes/widgets.php'; ?>
@@ -38,7 +42,7 @@
                 </div>
                 <a href="edit_contacto.php" class="btn-cms">Modificar</a>
             </div>
-            
+
             <div class="cms-card">
                 <div class="cms-icon"><i class="fas fa-share-nodes"></i></div>
                 <div class="cms-info">
@@ -65,7 +69,7 @@
                 </div>
                 <a href="edit_nosotros.php" class="btn-cms">Modificar</a>
             </div>
-             <div class="cms-card">
+            <div class="cms-card">
                 <div class="cms-icon"><i class="fas fa-gift"></i></div>
                 <div class="cms-info">
                     <h4>Donar</h4>
@@ -75,6 +79,7 @@
             </div>
         </section>
     </main>
+    <script src="../js/anti_back.js"></script>
 
     <script>
         const btnOpen = document.getElementById('openSidebar');
@@ -89,5 +94,7 @@
         btnOpen.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
     </script>
+    
 </body>
+
 </html>

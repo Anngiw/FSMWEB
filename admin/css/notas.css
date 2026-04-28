@@ -1,0 +1,36 @@
+/* admin/css/login.css */
+
+/* Contenedor del campo para posicionar el ojo */
+.field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* El icono del candado (izquierda) ya lo tienes, ahora el ojo (derecha) */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+/* Ajuste de la nota de error (sin CSS en línea) */
+
+
+.nota-error-login {
+    background-color: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    text-align: center;
+}

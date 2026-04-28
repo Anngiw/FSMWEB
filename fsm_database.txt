@@ -1,0 +1,17 @@
+-- 1. Creamos la base de datos con tu nombre específico si no existe
+CREATE DATABASE IF NOT EXISTS fsm_database;
+
+-- 2. Le decimos al sistema que use esa base de datos para lo que sigue
+USE fsm_database;
+
+-- 3. Creamos la tabla 'usuarios' con su estructura lógica
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,        -- Genera un número (1, 2, 3...) automático
+    nombre VARCHAR(100) NOT NULL,             -- Texto de hasta 100 caracteres, obligatorio
+    correo VARCHAR(150) UNIQUE NOT NULL,      -- UNIQUE evita que dos personas usen el mismo correo
+    password VARCHAR(255) NOT NULL,           -- Espacio largo para el Hash de seguridad
+    telefono VARCHAR(20) NOT NULL,            -- Guardamos el número para recuperación
+    rol ENUM('admin', 'usuario') DEFAULT 'usuario', -- Solo permite estos dos valores
+    token_recuperacion VARCHAR(255) NULL,     -- Campo vacío por defecto hasta que alguien pida recuperar
+    expiracion_token DATETIME NULL            -- Fecha y hora de vencimiento del token
+);

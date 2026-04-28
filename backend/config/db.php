@@ -1,27 +1,33 @@
 <?php
-// Detectar el entorno (Local o Producción)
-if ($_SERVER['SERVER_NAME'] == 'localhost') {
-    // Datos para XAMPP
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $db   = "db_fsmweb";
-} else {
-    // Datos para el servidor real (Los pondrás cuando compres el hosting)
-    $host = "nombre_del_servidor_remoto"; 
-    $user = "usuario_del_hosting";
-    $pass = "contraseña_segura";
-    $db   = "nombre_bd_hosting";
+// backend/config/db.php
+class Conexion {
+    private static $instancia = null;
+
+    public static function conectar() {
+        if (self::$instancia === null) {
+            // Detecta si es localhost
+            $isLocal = ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_SERVER['HTTP_HOST'] == 'localhost');
+
+            if ($isLocal) {
+                $host = "localhost";
+                $db   = "fsm_database";
+                $user = "root";
+                $pass = "";
+            } else {
+                // Datos del servidor real (cámbialos cuando subas la web)
+                $host = "tu_host_remoto"; 
+                $db   = "fsm_database";
+                $user = "tu_usuario_remoto";
+                $pass = "TuClaveSegura2026*";
+            }
+
+            try {
+                self::$instancia = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+                self::$instancia->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                die("Error de conexión: " . $e->getMessage());
+            }
+        }
+        return self::$instancia;
+    }
 }
-
-// Crear la conexión utilizando la extensión mysqli
-$conexion = mysqli_connect($host, $user, $pass, $db);
-
-// Configurar el juego de caracteres a UTF-8 para evitar problemas con tildes y la ñ
-mysqli_set_charset($conexion, "utf8mb4");
-
-// Verificar si la conexión falló
-if (!$conexion) {
-    die("Error crítico: No se pudo conectar a la base de datos. " . mysqli_connect_error());
-}
-?>

@@ -1,0 +1,14 @@
+# 1. Prohibir que se vea el índice de la carpeta (evita que listen tus archivos)
+Options -Indexes
+
+# 2. Permitir el acceso a los archivos .php específicos
+<Files "*.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# 3. Opcional: Bloquear acceso a archivos sensibles como .env o logs
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

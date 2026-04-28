@@ -1,3 +1,6 @@
+<?php
+require_once 'check_session.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,45 +14,56 @@
 </head>
 
 <body>
-  <header class="panel-header">
-    <div class="header-left-group">
-        <button class="hamburger-btn" id="openSidebar">
-            <i class="fas fa-bars"></i>
-        </button>
+    <header class="panel-header">
+        <div class="header-left-group">
+            <button class="hamburger-btn" id="openSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
 
-        <div class="header-welcome">
-            <h1 id="live-clock">00:00:00</h1>
-            <p id="live-date">Cargando fecha...</p>
+            <div class="header-welcome">
+                <h1 id="live-clock">00:00:00</h1>
+                <p id="live-date">Cargando fecha...</p>
+            </div>
         </div>
-    </div>
 
-    <div class="header-user">
-        <div class="notif-bell">
-            <i class="fas fa-user"></i>
-       
+        <div class="header-user">
+            <div class="notif-bell">
+                <i class="fas fa-user"></i>
+
+            </div>
+
+            <div class="user-meta">
+                <h1>Bienvenido, <?php echo $_SESSION['nombre']; ?></h1>
+                <p>Rol: <?php echo $_SESSION['rol']; ?></p> <strong>Marleny Mayorga Molina |</strong>
+                <span>Administrador</span>
+            </div>
         </div>
-        
-        <div class="user-meta">
-            <strong>Marleny Mayorga Molina |</strong>
-            <span>Administrador</span>
-        </div>
-    </div>
-</header>
+    </header>
 
-<script>
-    function updateClock() {
-        const now = new Date();
-        const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-        const timeString = now.toLocaleTimeString('es-CO', optionsTime);
-        const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-        const dateString = now.toLocaleDateString('es-CO', optionsDate);
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const optionsTime = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const timeString = now.toLocaleTimeString('es-CO', optionsTime);
+            const optionsDate = {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            };
+            const dateString = now.toLocaleDateString('es-CO', optionsDate);
 
-        document.getElementById('live-clock').innerText = timeString;
-        document.getElementById('live-date').innerText = dateString;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-</script>
+            document.getElementById('live-clock').innerText = timeString;
+            document.getElementById('live-date').innerText = dateString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 
 </html>

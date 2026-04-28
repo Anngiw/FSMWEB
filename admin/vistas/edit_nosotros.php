@@ -1,3 +1,6 @@
+<?php
+require_once 'check_session.php'; 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -153,6 +156,7 @@
         </div>
 
     </main>
+    <script src="../js/anti_back.js"></script>
 
     <script>
         function mostrarSeccion(id) {

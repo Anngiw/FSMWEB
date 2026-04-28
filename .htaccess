@@ -1,0 +1,20 @@
+# 1. Página de error 404 personalizada 
+ErrorDocument 404 /error404.php
+
+# 2. Evitar que se listen los archivos si no hay un index
+Options -Indexes
+
+# 3. Forzar el uso de HTTPS (Seguridad obligatoria en despliegue)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 4. Proteger archivos de configuración y datos sensibles
+<FilesMatch "\.(db|log|ini|txt|md|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 5. Seguridad de Cookies (Protección contra XSS)
+php_value session.cookie_httponly 1
+php_value session.use_only_cookies 1
