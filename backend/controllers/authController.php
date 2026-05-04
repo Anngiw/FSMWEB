@@ -75,21 +75,22 @@ public function verificarSesion() {
 //Recuperar contraseña cuando se a olvidado
 
 // Valida si el correo y el teléfono pertenecen al mismo usuario
+// Cambia solo este método dentro de tu AuthController
 public function validarIdentidad($correo, $telefono) {
-    // Buscamos al usuario por correo usando el método que ya tienes
     $user = $this->modelo->buscarPorCorreo($correo);
     
-    // Si el usuario existe y el teléfono coincide exactamente con la DB
-    if ($user && $user['telefono'] === $telefono) {
-        if (session_status() == PHP_SESSION_NONE) session_start();
+    if ($user && trim($user['telefono']) === trim($telefono)) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
         
-        // Creamos una "llave" temporal en la sesión para permitir el acceso al formulario final
         $_SESSION['temp_user_id'] = $user['id'];
+        $_SESSION['correo_verificado'] = $user['correo']; 
+        
         return true;
     }
     return false;
 }
-
 
 /**
      * Obtiene todos los datos de un usuario por su ID

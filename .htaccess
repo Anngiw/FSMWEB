@@ -1,20 +1,32 @@
-# 1. Página de error 404 personalizada 
-ErrorDocument 404 /error404.php
-
-# 2. Evitar que se listen los archivos si no hay un index
+# 1. Evitar que se listen las carpetas en el navegador
 Options -Indexes
 
-# 3. Forzar el uso de HTTPS (Seguridad obligatoria en despliegue)
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# 2. Página de error 404 personalizada
+ErrorDocument 404 /FSMWEB/error404.php
 
-# 4. Proteger archivos de configuración y datos sensibles
-<FilesMatch "\.(db|log|ini|txt|md|sql)$">
-    Order allow,deny
-    Deny from all
+# 3. Forzar el uso de HTTPS (Descomentar solo en el hosting)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 4. BLOQUEO ESPECÍFICO DE ARCHIVOS SENSIBLES
+# Protege el archivo .txt de la base de datos, archivos SQL y logs
+<FilesMatch "\.(db|log|ini|txt|md|sql|htaccess)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Allow,Deny
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
-# 5. Seguridad de Cookies (Protección contra XSS)
-php_value session.cookie_httponly 1
-php_value session.use_only_cookies 1
+# 5. Configuración de Cookies seguras para proteger tus sesiones
+<IfModule mod_php7.c>
+    php_value session.cookie_httponly 1
+    php_value session.use_only_cookies 1
+</IfModule>
+<IfModule mod_php.c>
+    php_value session.cookie_httponly 1
+    php_value session.use_only_cookies 1
+</IfModule>

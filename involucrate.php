@@ -92,7 +92,7 @@
                         style="background-color: red; border-radius: 10px;  box-shadow: 0 0 0 15px red;">
                 </div>
                 <p class="numero-pago">312 4939619</p>
-                <a href="dona.html" class="btn-donar">DONAR</a>
+                <a href="dona.php" class="btn-donar">DONAR</a>
             </div>
 
             <div class="metodo-pago bbva">
@@ -100,7 +100,7 @@
                     style="background-color: rgb(255, 255, 255); border-radius: 10px;  box-shadow: 0 0 0 10px rgb(255, 255, 255);">
                 <br>
                 <p class="numero-pago">#18087065-1</p>
-                <a href="dona.html" class="btn-donar">DONAR</a>
+                <a href="dona.php" class="btn-donar">DONAR</a>
             </div>
         </section>
 

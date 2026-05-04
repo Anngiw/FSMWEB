@@ -1,40 +1,69 @@
 <?php
 // admin/vistas/login.php
-// Importamos la lógica del controlador
 require_once __DIR__ . '/../../backend/controllers/authController.php';
+require_once __DIR__ . '/../../backend/models/usuario.php';
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-// Si ya hay sesión activa, redirigir al panel directamente
+$protocolo = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+$host = $_SERVER['HTTP_HOST'];
+$url_base = ($host === 'localhost' || $host === '127.0.0.1') ? $protocolo . $host . "/FSMWEB/" : $protocolo . $host . "/";
+
 if (isset($_SESSION['user_id'])) {
     header("Location: panel.php");
     exit();
 }
 
-// Variables para manejar los mensajes de error o éxito
 $error_mensaje = ""; 
+$modelo = new Usuario();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $auth = new AuthController();
-    
-    // Capturamos los datos del formulario
-    $identificador = isset($_POST['identificador']) ? $_POST['identificador'] : '';
+    $identificador = isset($_POST['identificador']) ? trim($_POST['identificador']) : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
     if (!empty($identificador) && !empty($password)) {
-        // Intentamos iniciar sesión
+        
+        // 1. Verificar bloqueo en la Base de Datos antes de evaluar credenciales
+        $usuarioDb = $modelo->buscarPorCorreo($identificador);
+        if ($usuarioDb && !empty($usuarioDb['fecha_bloqueo'])) {
+            if (time() < strtotime($usuarioDb['fecha_bloqueo'])) {
+                $_SESSION['bloqueo_seguridad'] = strtotime($usuarioDb['fecha_bloqueo']);
+                header("Location: " . $url_base . "error403.php");
+                exit();
+            } else {
+                // El bloqueo ya pasó, se desbloquea físicamente
+                $modelo->desbloquearUsuario($usuarioDb['id']);
+            }
+        }
+
+        // 2. Intentar autenticar
         if ($auth->iniciarSesion($identificador, $password)) {
+            unset($_SESSION['intentos_login']);
             header("Location: panel.php");
             exit();
         } else {
-            $error_mensaje = "Credenciales incorrectas. Intenta de nuevo.";
+            if (!isset($_SESSION['intentos_login'])) {
+                $_SESSION['intentos_login'] = 0;
+            }
+            $_SESSION['intentos_login']++;
+            $intentos_restantes = 3 - $_SESSION['intentos_login'];
+
+            if ($_SESSION['intentos_login'] >= 3) {
+                unset($_SESSION['intentos_login']);
+                header("Location: olvide_password.php");
+                exit();
+            } else {
+                $error_mensaje = "Credenciales incorrectas. Te quedan " . $intentos_restantes . " intento(s).";
+            }
         }
     } else {
         $error_mensaje = "Por favor, completa todos los campos.";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -46,9 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body class="login-page">
-
     <div class="background-overlay"></div>
-
     <div class="login-card">
         <aside class="login-aside">
             <div class="aside-content">
@@ -73,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <?php if ($error_mensaje): ?>
                     <div class="nota-error-login">
-                        <i class="fas fa-exclamation-circle"></i> <?php echo $error_mensaje; ?>
+                        <i class="fas fa-exclamation-circle"></i> <?php echo htmlspecialchars($error_mensaje); ?>
                     </div>
                 <?php endif; ?>
 
@@ -107,18 +134,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <i class="fas fa-house"></i>
     </a>
 
-    <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#password');
-
-        togglePassword.addEventListener('click', function (e) {
-            // Cambiar el tipo de input
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-            // Cambiar el icono
-            this.classList.toggle('fa-eye-slash');
-        });
-    </script>
-
+    <script src="../js/login.js"></script>
 </body>
 </html>

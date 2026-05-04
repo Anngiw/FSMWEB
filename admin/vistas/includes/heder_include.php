@@ -34,8 +34,8 @@ require_once 'check_session.php';
 
             <div class="user-meta">
                 <h1>Bienvenido, <?php echo $_SESSION['nombre']; ?></h1>
-                <p>Rol: <?php echo $_SESSION['rol']; ?></p> <strong>Marleny Mayorga Molina |</strong>
-                <span>Administrador</span>
+                <p>Rol: <?php echo $_SESSION['rol']; ?></p> 
+                
             </div>
         </div>
     </header>

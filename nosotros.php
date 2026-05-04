@@ -193,7 +193,7 @@
                 </div>
 
                 <div class="action-button-container">
-                    <a href="equipo.html" class="btn-ver">VER</a>
+                    <a href="equipo.php" class="btn-ver">VER</a>
                 </div>
             </div>
         </section>

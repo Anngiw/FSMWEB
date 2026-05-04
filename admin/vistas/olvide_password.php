@@ -1,3 +1,18 @@
+<?php
+// admin/vistas/olvide_password.php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$protocolo = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+$host = $_SERVER['HTTP_HOST'];
+$url_base = ($host === 'localhost' || $host === '127.0.0.1') ? $protocolo . $host . "/FSMWEB/" : $protocolo . $host . "/";
+
+if (isset($_SESSION['bloqueo_seguridad']) && time() < $_SESSION['bloqueo_seguridad']) {
+    header("Location: " . $url_base . "error403.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,9 +30,9 @@
         <h2>Verificar Identidad</h2>
         <p>Para proteger tu cuenta en <strong>FSMWEB</strong>, confirma los datos de registro.</p>
 
-        <?php if(isset($_GET['error'])): ?>
+        <?php if (isset($_GET['error'])): ?>
             <div class="alert-error">
-                <i class="fas fa-times-circle"></i> Los datos no coinciden.
+                <i class="fas fa-times-circle"></i> Los datos no coinciden. Inténtalo de nuevo.
             </div>
         <?php endif; ?>
 
@@ -34,7 +49,7 @@
                 <label>Teléfono de Contacto</label>
                 <div class="input-field">
                     <i class="fas fa-phone-alt"></i>
-                    <input type="text" name="telefono" placeholder="Número registrado" required>
+                    <input type="tel" name="telefono" placeholder="Número registrado" pattern="[0-9]{7,15}" required>
                 </div>
             </div>
 

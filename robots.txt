@@ -2,38 +2,36 @@
 # Robots.txt para Fundación El Señor de los Milagros
 # ==========================================================
 
-# 1. Dirección del Sitemap (Asegúrate de cambiar el dominio al final)
-Sitemap:https://anngiw.github.io/FSMWEB/index.html/sitemap.xml
+# 1. Dirección del Sitemap (Usa la URL final de tu dominio)
+Sitemap: https://fsm-web.com/sitemap.xml
 
 # 2. Configuración para todos los bots (Google, Bing, etc.)
 User-agent: *
 
-# --- Secciones permitidas ---
+# --- Secciones permitidas (Lo que sí deben ver) ---
 Allow: /
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/img/
+Allow: /assets/
+Allow: /frontend/
+Allow: /js/
+Allow: /css/
 
-# --- Secciones bloqueadas (Lo que faltaba) ---
-# Bloqueamos carpetas de desarrollo que no deben ser públicas
-Disallow: /frontend/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /config/
-Disallow: /temp/
+# --- Secciones bloqueadas (SEGURIDAD CRÍTICA) ---
+# Bloqueamos toda la carpeta de administración y el backend
+Disallow: /admin/
+Disallow: /backend/
 
-# Bloqueamos archivos sueltos de configuración
+# Bloqueamos archivos sueltos de sistema y configuración
+Disallow: /crear_admin.php
+Disallow: /logout.php
+Disallow: /fsm_database.txt
 Disallow: /README.md
-Disallow: /package.json
-Disallow: /package-lock.json
-Disallow: /.gitignore
+Disallow: /error404.php
+Disallow: /.htaccess
+
+# Bloqueamos cualquier rastro de Git si existiera
 Disallow: /.git/
 
-# Bloqueamos la carpeta de fotos pesadas si no quieres que indexen 
-# cada imagen individual sino que vean la página completa
-Disallow: /assets/img/fotos/
-
-# 3. Bloqueo específico para bots de SPAM o "Scrapers" (Muy profesional)
+# 3. Configuraciones especiales para bots de Google
 User-agent: Mediapartners-Google
 Allow: /
 

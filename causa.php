@@ -134,7 +134,7 @@
     </section>
 
     <div class="seccion-btn-desplazamiento">
-        <a href="dona.html" class="btn-ir-apoyo">APOYA SU PAZ Y FELICIDAD</a>
+        <a href="dona.php" class="btn-ir-apoyo">APOYA SU PAZ Y FELICIDAD</a>
     </div>
 
     <section id="testimonios" class="seccion-testimonios">

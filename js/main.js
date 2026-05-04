@@ -33,6 +33,6 @@ function activarLogicaDelMenu() {
 // Ejecutamos la carga al iniciar la página
 document.addEventListener('DOMContentLoaded', () => {
     // Primero cargamos los archivos
-    cargarComponente('main-header', 'frontend/partes/header.html');
-    cargarComponente('main-footer', 'frontend/partes/footer.html');
+    cargarComponente('main-header', 'frontend/partes/header.php');
+    cargarComponente('main-footer', 'frontend/partes/footer.php');
 });

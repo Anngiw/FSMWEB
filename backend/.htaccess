@@ -1,14 +1,26 @@
-# 1. Prohibir que se vea el índice de la carpeta (evita que listen tus archivos)
+# 1. Evitar que se listen los archivos de esta carpeta
 Options -Indexes
 
-# 2. Permitir el acceso a los archivos .php específicos
-<Files "*.php">
-    Order Allow,Deny
-    Allow from all
-</Files>
+# 2. Bloquear el acceso a archivos de datos y configuración
+# Esto impide que descarguen fsm_database.txt o lean archivos de sistema
+<FilesMatch "\.(db|log|ini|txt|md|sql|htaccess)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Allow,Deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
 
-# 3. Opcional: Bloquear acceso a archivos sensibles como .env o logs
-<FilesMatch "^\.">
-    Order allow,deny
-    Deny from all
+# 3. PERMITIR el procesamiento de tus formularios (POST y GET)
+# Esto asegura que procesar_login.php, procesar_perfil.php, etc., funcionen siempre
+<FilesMatch "\.(php)$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Allow from all
+    </IfModule>
 </FilesMatch>

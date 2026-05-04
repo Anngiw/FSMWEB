@@ -44,7 +44,7 @@
                 <div class="hero-text-block">
                     <h1 class="quote-fsm">Cuidando  <br> a quienes <br> más nos necesitan.</h1>
                     <div class="hero-actions">
-                        <a href="causa.html" class="btn-yellow">SERVICIO</a>
+                        <a href="causa.php" class="btn-yellow">SERVICIO</a>
                         <a href="./admin/vistas/login.php" class="btn-yellow">INGRESA</a>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="conocenos-actions">
-                    <a href="nosotros.html" class="btn-ver-general">VER</a>
+                    <a href="nosotros.php" class="btn-ver-general">VER</a>
                 </div>
             </div>
         </section>
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="historia-action">
-                    <a href="nosotros.html" class="btn-ver-historia">VER</a>
+                    <a href="nosotros.php" class="btn-ver-historia">VER</a>
                 </div>
 
             </div>

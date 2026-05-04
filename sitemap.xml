@@ -1,52 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://anngiw.github.io/FSMWEB/index.html">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
+  <!-- CAMBIA 'https://tu-dominio-final.com/' POR TU URL REAL AL SUBIR EL SITIO -->
+
+  <!-- Página de Inicio (Prioridad Máxima) -->
   <url>
-    <loc>https://fsm-web.com/index.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://tu-dominio-final.com/index.php</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>1.00</priority>
   </url>
   
+  <!-- Secciones Principales -->
   <url>
-    <loc>https://fsm-web.com/nosotros.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://tu-dominio-final.com/nosotros.php</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.80</priority>
   </url>
   
   <url>
-    <loc>https://fsm-web.com/voluntariado.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://tu-dominio-final.com/voluntariado.php</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://fsm-web.com/causa.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://tu-dominio-final.com/causa.php</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Secciones de Interacción -->
+  <url>
+    <loc>https://tu-dominio-final.com/contacto.php</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
-    <loc>https://fsm-web.com/contacto.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://tu-dominio-final.com/involucrate.php</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
-    <loc>https://fsm-web.com/dona.html</loc>
-    <lastmod>2026-03-26</lastmod>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://fsm-web.com/equipo.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://tu-dominio-final.com/equipo.php</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://fsm-web.com/involucrate.html</loc>
-    <lastmod>2026-03-26</lastmod>
-    <priority>0.70</priority>
   </url>
 
 </urlset>

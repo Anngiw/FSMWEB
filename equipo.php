@@ -67,8 +67,8 @@
                             devolver un poco de lo mucho que ellos entregaron. Hoy puedes ser ese abrazo que no se pide,
                             pero que se necesita profundamente</p>
                         <div class="grupo-botones">
-                            <a href="voluntariado.html" class="btn-amarillo">SÉ VOLUNTARIO</a>
-                            <a href="causa.html" class="btn-amarillo">NUESTRA CAUSA</a>
+                            <a href="voluntariado.php" class="btn-amarillo">SÉ VOLUNTARIO</a>
+                            <a href="causa.php" class="btn-amarillo">NUESTRA CAUSA</a>
                         </div>
                     </div>
                 </div>
